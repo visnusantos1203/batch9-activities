@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Landing Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Landing-page/css/styles.css">
+    <link rel="icon" href="./assets/covape.svg" type="image/svg+xml" sizes="any">
+    
+</head>
+<body>
+
+    <div class="header-container">
+        <header id="header">
+            <div class="logo-container">
+                <a href="#"><img src="../Landing-page/assets/covape.svg" alt="covape-19 logo" id="header-img"></a>    
+                <nav id="nav-bar">
+                    <!--<div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">JUICE</button>
+                        <div class="dropdown-content" id="myDropdown">
+                            <a href="#" class="juice-link">0mg</a>
+                            <a href="#" class="juice-link">3mg</a>
+                            <a href="#" class="juice-link">6mg</a>
+                            <a href="#" class="juice-link">SALTNIC</a>
+                            <a href="#" class="juice-link">12mg</a>
+                            <a href="#" class="juice-link">24mg</a>
+                            <a href="#" class="juice-link">30mg</a>                        
+                    </div></div>-->
+                    <a href="#juice" class="nav-link">JUICE</a>
+                    <a href="#mods" class="nav-link">MODS/PODS</a>
+                    <a href="#testimonials" class="nav-link">ACCESSORIES</a>
+                    <a href="#" class="nav-link"> SERVICES</a>
+                </nav>    
+            </div>
+            <div>
+            </div>
+            <div class="checkout">
+                <a href="#" id="cart-link" >
+                    <img src="./assets/shopping-cart.svg" alt="shopping-cart" id="cart-img">
+                </a>
+                <a href="#" id="contact-us-link">
+                    <img src="./assets/chat.svg" alt="contact-us img" id="contactus-img">
+                </a>
+                <a href="#" id="faqs-link">
+                    <img src="./assets/faq.svg" alt="faqs img" id="faqs-img">
+                </a>     
+            </div>
+        </header>    
+    </div>
+
+    <div class="vid-container">
+        <div>
+            <video autoplay muted loop class="bg-video">
+                <source src="./assets/videos/video1.mp4" type="video/mp4"> 
+            </video>
+        </div>
+    </div>
+    <div class="section-1">
+        <div class="welcome">
+            <h1>COVAPE-19 GARAGE</h1>
+            <h2><em>inhale the good stuff </em>  </h2>
+            <p>Vape is a popular and safer alternative for cigarettes. For people who are having a hard time giving up cigarette smoking, vape has been their salvation from addiction. As more and more people are switching to a safer way to smoke, we've decided to establish this business to provide better products and services for our local vape community  </p>
+            <p>COVAPE-19 is comitted to providing wide variety of juice flavors, hi-tech and the latest technologies in mods and pods, and outstanding services. We're here to help you whether you're  simply trying something new or trying to overcome your addiction by providing delicious and exciting quality vape products</p>
+        </div>
+        <div class="empty-div form_wrapper">
+            <div class="form_container">
+                <div class="title_container">
+                  <h2>Register now and get 20% off on your first order!</h2>
+                </div>
+                <div class="row clearfix">
+                  <div class="">
+                    <form action="./destination.html">
+                      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                        <input type="email" name="email" placeholder="Email" required />
+                      </div>
+                      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <input type="password" name="password" placeholder="Password" required />
+                      </div>
+                      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <input type="password" name="password" placeholder="Re-type Password" required />
+                      </div>
+                      <div class="row clearfix">
+                        <div class="col_half">
+                          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                            <input type="text" name="name" placeholder="First Name" />
+                          </div>
+                        </div>
+                        <div class="col_half">
+                          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                            <input type="text" name="name" placeholder="Last Name" required />
+                          </div>
+                        </div>
+                      </div>
+                            <div class="input_field radio_option">
+                          <input type="radio" name="radiogroup1" id="rd1">
+                          <label for="rd1">Male</label>
+                          <input type="radio" name="radiogroup1" id="rd2">
+                          <label for="rd2">Female</label>
+                          </div>
+                          <div class="input_field select_option">
+                            <select>
+                              <option>Select a country</option>
+                              <option>Option 1</option>
+                              <option>Option 2</option>
+                            </select>
+                            <div class="select_arrow"></div>
+                          </div>
+                        <div class="input_field checkbox_option">
+                            <input type="checkbox" id="cb1">
+                            <label for="cb1">I agree with terms and conditions</label>
+                        </div>
+                        <div class="input_field checkbox_option">
+                            <input type="checkbox" id="cb2">
+                            <label for="cb2">I want to receive the newsletter</label>
+                        </div>
+                      <input class="button" type="submit" value="Register" id="submit"/>
+                    </form>
+                  </div>
+                </div>
+              </div>
+           <!-- <form action="" id="register-form">
+                <div>
+                    <input type="text" name="first" placeholder="Name" required> <input type="text" name="last" placeholder="last name" required>
+                </div>
+                <div>
+                    <input type="email" name="email" placeholder="juan@example.com" required>
+                    <input type="tel" name="phone" pattern="[0-9]{9}" placeholder="09123456789" required>
+                </div>
+            </form>-->
+
+
+        </div>    
+    </div>
+    <div class="mother-of-all-divs">
+
+        <section id="juice">
+            <div class="logo-flex">
+                <div class="mods">
+                    <h1>MODS/PODS BRANDS</h1>
+                    <div class="brand-container">
+                        <img src="https://cdn.shopify.com/s/files/1/0054/3965/1958/files/vaporesso.png?v=1578052427" alt="vaporesso">
+                    </div>
+                    <div class="brand-container">
+                        <img src="https://www.geekvape.com/images/logo.svg" alt="geekvape">
+                        <img src="https://i1.voopoo.com/static/dist/images/logo.png?v=3a6cae85dd" alt="vopoo">    
+                    </div>
+                </div>
+                <div class="brands">
+                    <h1>JUICE BRANDS</h1>
+                    <div class="brand-container one">
+                        <img src="https://ph-test-11.slatic.net/p/7d77d2774b2dbdb1624e62c1a704850b.jpg" alt="katas ni dogie">
+                        <img src="./assets/pastry-logo.jpg" alt="pastry vape juice">    
+                    </div>
+                    <div class="brand-container two">
+                        <img src="./assets/viscocity-logo.jpg" alt="viscocity">
+                        <img src="./assets/chillbill-logo.jpg" alt="chill bill">    
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm3jqJWAFwPTNoYxvuBV3S_oGoOHsAevPvGg&usqp=CAU" alt="nerdz"> 
+                    </div>
+                </div>
+            </div>
+        </section>
+            
+        <section id="testimonials">
+            <div class="testimonials">
+                <div class="testimonial-container">
+                    <blockquote> "Solid lahat ng juice na nabili ko lalo yung Pastry Vapors! Order ulit ako sooooon!!" </blockquote>
+                    <h6> <em>-Johny Johny Yes Papa</em> </h6>
+                </div>
+                <div class="testimonial-img">
+                    <img src="https://www.freepnglogos.com/uploads/troll-face-png/troll-face-god-imagination-22.png" alt="">
+                </div>    
+            </div>
+        </section>
+
+        <div class="main-div" id="mods" >
+            <div class="slider">
+                <div class="product-container 1">
+                    <img src="https://www.geekvape.com/upload/aegis-nano/aegis-nano-list.png" alt="">
+                </div>
+        
+                <div class="product-container 2">
+                    <img src="https://www.geekvape.com/upload/z50/z50-list.png" alt="">
+                </div>
+    
+                <div class="product-container 3">
+                    <img src="https://www.geekvape.com/upload/aegis-legend2/aegis-legend2-list.png" alt="">
+                </div>
+    
+                <div class="product-container 4">
+                    <img src="https://www.geekvape.com/upload/obelisk-60/210420/1-2104201623293V.png" alt="">
+                </div>
+        
+                <div class="product-container 6">
+                    <img src="https://www.geekvape.com/upload/newpro/talo-list.png" alt="">
+                </div>
+    
+                <div class="product-container 7">
+                    <img src="https://www.geekvape.com/upload/zmax/zmax-list.png" alt="">
+                </div>
+       
+                <div class="product-container 9">
+                    <img src="https://www.geekvape.com/upload/wenax-k1/wenax-k1-list.png" alt="">
+                </div>
+    
+                <div class="product-container 10">
+                    <img src="https://www.geekvape.com/upload/wenax-c1/wenax-c1-list.png" alt="">
+                </div>
+    
+        
+                <div class="product-container 11">
+                    <img src="https://www.geekvape.com/upload/newpro/aegis-boost-pro-list.png" alt="">
+                </div>
+    
+                <div class="product-container 12">
+                    <img src="https://www.geekvape.com/upload/allimg/210112/1-2101121420050-L.png" alt="">
+    <!--<section id="franchise">
+                            <form action="../Landing-page/destination.html" id="form" target="_blank">
+                                <input type="email" id="email" placeholder="juan@example.com">
+                                <button type="submit" id="submit"> Submit</button>
+                            </form>
+                        </section>-->
+                </div>
+            </div>
+        </div>
+        <footer>
+            <!--<div class="contact">
+                <h2>CONTACT US</h2>
+                <p>
+                    Business Contact: sales@voopoo.com
+                    <br>
+                    Customer Service: support@voopoo.com
+                </p>
+            </div>-->
+            <div class="social-media">
+                <div class="sm-logo">
+                    <a href="#" target="_blank"><img src="./assets/facebook.jpg" alt=""></a>
+                    <a href="#" target="_blank"><img src="./assets/instagram.jpg" alt=""></a>
+                    <a href="#" target="_blank"><img src="./assets/whatsapp.jpg" alt=""></a>
+                    <a href="#" target="_blank"><img src="./assets/twitter.jpg" alt=""></a>    
+                </div>
+            </div>
+            <!--<div class="support-container">
+                <h2>SUPPORT</h2>
+                <div class="support">
+                    <a href="#" target="_blank">Manual</a>
+                    <a href="#" target="_blank">Warranty</a>
+                    <a href="#" target="_blank">After Sales</a>
+                    <a href="#" target="_blank">FAQ</a>
+                </div>
+            </div>-->
+        </footer>
+    </div>
+    
+    
+    <script src="../Landing-page/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $('.slider').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            speed: 1000,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            });
+    </script>
+</body>
+</html>

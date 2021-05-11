@@ -1,0 +1,16 @@
+
+.bg-video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.video-bg2{
+    object-fit: cover;
+    width: 100vw;
+    height: 50vh;
+    z-index: 4;
+}

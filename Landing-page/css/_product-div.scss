@@ -1,0 +1,91 @@
+@font-face {
+    font-family: long-shot;
+    src: url("../Long_Shot.ttf");
+}
+
+$color1: #A6BF48;
+$color2: #66A662;
+$color3: #FFFFFF;
+$color4: #DDDDDD;
+
+
+@mixin productDiv($direction) {
+    height: inherit;
+    background-color: rgba(255, 255, 255, 0.4) transparent;
+    border-radius: 25px;
+    /*box-shadow:  -15px 20px 20px -20px rgba(250, 250, 250, 0.884),
+                 15px 20px 20px -20px rgba(250, 250, 250, 0.6);*/
+    //border-top: 1px solid rgba(245, 245, 245, 0.5);
+    //border-left: 1px solid rgba(245, 245, 245, 0.5);
+    flex-direction: $direction;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-blend-mode:luminosity;
+    background-size: 100% 100%;
+    padding: 10px;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+.main-div {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    background-image: url("https://www.geekvape.com/upload/z50/z50-01.jpg");
+    background-color: black;
+    background-size:90% 80%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: center;
+    //margin-top: 50vh;
+    //border: 2px solid rebeccapurple
+}
+
+.slider{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 80vw;
+
+}
+
+.product-container{
+    @include productDiv(row);
+    width: 5vw;
+    height: 45vh;
+    font-family: 'long-shot';
+    font-size: 10em;
+    margin: auto;
+    padding: 0px;
+    img{
+        width: 13vw;
+        height: 40vh;
+        border-radius: 20px;
+        margin: auto;
+        margin-top: 10px;
+        //border: 3px solid rgba(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.2);
+        //border-top: 2px solid rgba(255, 255, 255, 0.4);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+        border-left: 2px solid rgba(255, 255, 255, 0.4);
+
+
+    }
+}
+
+.slick-track {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: auto;
+    padding-top: 10px;
+    //border: 1px solid red;
+    height: 55vh;
+    width: 70vw;
+}

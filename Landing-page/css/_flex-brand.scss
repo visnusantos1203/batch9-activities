@@ -1,0 +1,115 @@
+.logo-flex{
+    //display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    //grid-template-columns: 15vw 3fr 50px 3fr 15vw;
+    //grid-template-rows: repeat(4, 1fr);
+    //grid-area: auto;
+    //border: 1px solid white;
+    width: 30vw;
+    height: 100vh;
+    //padding: 20px;
+    margin:auto;
+    /*background-image: url('https://image.freepik.com/free-photo/close-up-macro-shot-single-micro-coil-with-japanese-organic-cotton-wick-high-end-rebuildable-dripping-tank-atomizer-flavour-chaser-vaping-device-vape-gear-vaporizer_133982-280.jpg');
+    background-color: black;
+    background-size: 75% 90%;
+    background-position-x: right;
+    background-position-y: 50%;
+    background-blend-mode: luminosity;
+    background-repeat: no-repeat;
+    background-attachment: fixed;*/
+    /*grid-template-areas: 
+    ". mods logo . ."
+    ". mods logo . ."
+    ". partners logo . ."
+    ". partners . . ."
+    ;*/
+    .brands{
+        //grid-area: partners;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+        width: 50%;
+        height: 35vh;
+        //border: 10px double goldenrod;
+        h1{
+            font-family: sans-serif;
+            color: goldenrod;
+            letter-spacing: 5px;
+            border-top: 10px double goldenrod;
+            border-bottom: 10px double goldenrod;
+            //background-color: rgba(218, 165, 32, 0.6);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+       
+        .brand-container{
+            display: flex;
+            justify-content: space-evenly;
+            height: 50%;
+            width: auto;
+            //border: 2px solid white;
+        }
+
+        .one{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            margin-left: 20px;
+            img{
+                margin-left: 10px;
+            }
+        }
+        .two img,
+        .one img{
+            width: 40%;
+            height: 38;
+            padding: 10px;
+            border-radius: 30%;
+            border:1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            &:hover{
+                transform: scale(1.1);
+            }    
+        }
+    }
+    .mods{
+        grid-area: mods;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+        width: 50%;
+        height: 35vh;
+        //border: 2px solid white;
+        //background-color: rgba(255, 255, 255, 0.1);
+        h1{
+            width: 100%;
+            font-family: sans-serif;
+            color: goldenrod;
+            letter-spacing: 5px;
+            border-top: 10px double goldenrod;
+            border-bottom: 10px double goldenrod;
+            padding: 20px;
+            text-align: center;
+        }
+        img{
+            width: 50%;
+            height: inherit;
+        }
+        .brand-container{
+            display: flex;
+            justify-content: space-evenly;
+            height: auto;
+            width: 100%;
+            //border: 2px solid white;
+        }
+    }
+}
