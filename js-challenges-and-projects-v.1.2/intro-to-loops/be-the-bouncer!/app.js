@@ -34,3 +34,4 @@ for(let i = 0; i < nightClubRegister.length; i++){
         console.log(`Welcome! ${nightClubRegister[i].name}`);
     }
 }
+//asdasdasdasd
