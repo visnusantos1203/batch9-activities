@@ -50,9 +50,3 @@ downButton.addEventListener('click', moveDown)
 buyListDisplay.innerHTML = buyList
 fridgeListDisplay.innerHTML = fridge
 
-
-function moveRobot() {
-    //add code here
-    robot.style.marginLeft = "45vw";
-}
-robot.addEventListener('click', moveRobot)
