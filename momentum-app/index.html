@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./script/script.js" defer></script>
+    <title>Momentum App</title>
+</head>
+<body onload="startTime()">
+    <div class="video-bg">
+        <video autoplay loop class="bg-video">
+            <source type="video/mp4" src="./assets/beach.mp4">
+        </video>
+    </div>
+    <div class="main-div">
+        <div id="time-container"></div>
+        <div id="greetings-container">
+            <span id="greetings-text" contenteditable="true"></span>
+            <input type="text" name="greetings" id="greetings" placeholder="your name here" contenteditable="true">
+        </div>
+        <div id="main-focus-container"></div>
+        <div id="quote-container"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.bg-video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+@font-face {
+    font-family: clock;
+    src: url("../digital-7\ \(italic\).ttf");
+    font-family: clock2;
+    src: url("../digital-7\ \(mono\ italic\).ttf")
+};
+
+.main-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    background-image: url('https://image.freepik.com/free-photo/beautiful-shot-small-lake-with-wooden-rowboat-focus-breathtaking-clouds-sky_181624-2490.jpg');
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    //border: 1px solid red;
+}
+
+#time-container{
+    display: flex;
+    //margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 30vh;
+    border: 1px solid black;
+    font-family: "clock2";
+    font-size: 7em;
+    color: white;
+}
+
+#greetings-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 40vw;
+    height: 20vh;
+    margin: 0;
+    #greetings-text{
+        font-size: 4em;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        color: white;
+    }  
+    input{
+        display: block;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 3px solid black;
+        margin: auto;
+        margin-top: 0;
+        padding-right: 20px;
+        width: 50%;
+        height: 50px;
+        max-height: 75vh;
+        text-align: center;
+        font-size: 2em;
+        background-color: transparent;
+        color: white;
+        
+    }
+}
+
+#main-focus-container{
+    width: 40vw;
+    height: 30vh;
+    border: 1px solid black;
+}
