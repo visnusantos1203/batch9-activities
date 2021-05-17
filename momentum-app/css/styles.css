@@ -3,53 +3,32 @@
           box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  z-index: 2;
 }
 
-.bg-video {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-@font-face {
-  font-family: clock;
-  src: url("../digital-7 (italic).ttf");
-  font-family: clock2;
-  src: url("../digital-7 (mono italic).ttf");
-}
-
-.main-div {
+.side-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: white;
-  background-image: url("https://image.freepik.com/free-photo/beautiful-shot-small-lake-with-wooden-rowboat-focus-breathtaking-clouds-sky_181624-2490.jpg");
-  background-size: 100% 100%;
-  width: 100vw;
   height: 100vh;
-  z-index: 2;
+  width: auto;
+  border: 5px solid white;
 }
 
 #time-container {
+  width: inherit;
+  height: inherit;
+  z-index: 1;
+  text-align: center;
+  border: 1px solid black;
+  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,31 +38,83 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 40vw;
-  height: 30vh;
-  border: 1px solid black;
   font-family: "clock2";
-  font-size: 7em;
+  font-size: 4em;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#main-focus-container {
+  width: inherit;
+  height: inherit;
+  z-index: 1;
+  text-align: center;
+  border: 1px solid black;
   color: white;
+}
+
+#main-focus-container #main-focus {
+  border: none;
+  border-bottom: 3px solid white;
+  background-color: transparent;
+  text-align: center;
+  color: white;
+}
+
+#main-focus-container .show {
+  visibility: visible;
+}
+
+#main-focus-container .hide {
+  visibility: hidden;
+}
+
+#toDoList-container {
+  width: inherit;
+  height: inherit;
+  z-index: 1;
+  text-align: center;
+  border: 1px solid black;
+  color: white;
+}
+
+@font-face {
+  font-family: clock2;
+  src: url("../digital-7 (mono italic).ttf");
+}
+
+.main-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 100vh;
+  width: 80vw;
 }
 
 #greetings-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid black;
-  width: 40vw;
-  height: 20vh;
+  border: 10px solid black;
   margin: 0;
+  z-index: 1;
 }
 
 #greetings-container #greetings-text {
@@ -95,25 +126,126 @@ body {
 
 #greetings-container input {
   display: block;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 3px solid black;
+  border: none;
+  border-bottom: 3px solid white;
   margin: auto;
   margin-top: 0;
   padding-right: 20px;
-  width: 50%;
-  height: 50px;
-  max-height: 75vh;
+  width: inherit;
+  height: inherit;
+  max-height: 20vh;
   text-align: center;
   font-size: 2em;
   background-color: transparent;
   color: white;
 }
 
-#main-focus-container {
+#quote-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 500px;
+  width: inherit;
+  font-size: 2.5em;
+  border: 2px solid white;
+  color: white;
+  text-align: center;
+}
+
+#button {
+  background-color: red;
+  border: 20px solid red;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  margin: auto;
+}
+
+#add-quote {
+  background-color: transparent;
+}
+
+#modal-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   width: 40vw;
-  height: 30vh;
-  border: 1px solid black;
+  height: 280px;
+  border: 2px solid purple;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.modal-content label {
+  text-align: left;
+  font-size: 1rem;
+}
+
+.modal-content button {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@font-face {
+  font-family: clock2;
+  src: url("../digital-7 (mono italic).ttf");
+}
+
+.main-div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 80%;
+      grid-template-columns: 20% 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.main-div div {
+  z-index: 1;
+}
+
+.bg-video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 /*# sourceMappingURL=styles.css.map */
