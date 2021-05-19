@@ -148,3 +148,22 @@ submitBtn.addEventListener("click", onSubmit);
         addQuoteBtn.style.display = "block";
     }
 console.log(arrayOfQuotes);
+
+// code for todo list
+var ul = document.querySelector(".list-container");
+var addBtn = document.getElementById("add-toDo");
+var toDoInput = document.getElementById("toDo-input");
+
+//adds event listener to add button
+addBtn.onclick = function(){
+    var createLi = document.createElement("li");
+    createLi.innerText = toDoInput.value;
+    console.log(toDoInput.value.length)
+   
+    if(toDoInput.value.length > 0){
+        ul.append(createLi);
+    } else{
+        alert("Oops! You can not submit an empty to do")
+    }
+     toDoInput.value = "";	
+};
