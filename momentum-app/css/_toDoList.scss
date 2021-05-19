@@ -1,0 +1,22 @@
+.toDoList-container{
+    h3{
+        padding: 0;
+        margin: 0;
+    }
+    #add-toDo{
+        background-color: red;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+#toDo-input{
+    background-color: /*rgba(255, 255, 255, 0.5)*/ transparent;
+    border: none;
+    border-bottom: 3px solid red;
+    padding: 5px;
+    color: white;
+    &::placeholder{
+        color: white;
+    }
+}
