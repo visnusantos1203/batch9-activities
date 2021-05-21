@@ -4,77 +4,27 @@
 }
 
 html, body {
+  width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .side-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100vh;
-  width: auto;
-  border: 5px solid white;
-}
-
-#time-container {
-  width: inherit;
-  height: inherit;
-  z-index: 1;
-  text-align: center;
-  border: 1px solid black;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 8;
+  grid-row: 1 / 9;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "clock2";
-  font-size: 4em;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-#main-focus-container {
-  width: inherit;
-  height: inherit;
-  z-index: 1;
-  text-align: center;
-  border: 1px solid black;
-  color: white;
-}
-
-#main-focus-container #main-focus {
-  border: none;
-  border-bottom: 3px solid white;
-  background-color: transparent;
-  text-align: center;
-  color: white;
-}
-
-#main-focus-container .show {
-  visibility: visible;
-}
-
-#main-focus-container .hide {
-  visibility: hidden;
-}
-
-#toDoList-container {
-  width: inherit;
-  height: inherit;
-  z-index: 1;
-  text-align: center;
-  border: 1px solid black;
-  color: white;
 }
 
 @font-face {
@@ -83,25 +33,44 @@ html, body {
 }
 
 .main-column {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 6;
+  grid-column: 3 / 9;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 8;
+  grid-row: 1 / 9;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (12.5%)[8];
+      grid-template-columns: repeat(8, 12.5%);
+  -ms-grid-rows: (12.5%)[8];
+      grid-template-rows: repeat(8, 12.5%);
+  z-index: 1;
+}
+
+#time-container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2 / 5;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  display: block;
+  margin: auto;
   -ms-flex-line-pack: center;
       align-content: center;
-  height: 100vh;
-  width: 80vw;
-  z-index: 1;
-  border: 50px solid white;
+  font-family: "clock2";
+  font-size: 5em;
 }
 
 #greetings-container {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1 / 6;
+  -ms-grid-row: 5;
+  grid-row: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,16 +83,18 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 10px solid black;
   margin: 0;
+  padding: 0;
   z-index: 1;
+  font-family: monospace;
 }
 
 #greetings-container #greetings-text {
-  font-size: 4em;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 3em;
+  font-family: monospace;
   text-align: center;
   color: white;
+  margin: 0;
 }
 
 #greetings-container input {
@@ -133,19 +104,82 @@ html, body {
   margin: auto;
   margin-top: 0;
   padding-right: 20px;
-  width: inherit;
-  height: inherit;
-  max-height: 20vh;
   text-align: center;
   font-size: 2em;
+  font-family: monospace;
   background-color: transparent;
-  color: white;
+  color: orangered;
 }
 
-#quote-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+#greetings-container input::-webkit-input-placeholder {
+  color: black;
+  font-size: 1rem;
+  font-family: monospace;
+}
+
+#greetings-container input:-ms-input-placeholder {
+  color: black;
+  font-size: 1rem;
+  font-family: monospace;
+}
+
+#greetings-container input::-ms-input-placeholder {
+  color: black;
+  font-size: 1rem;
+  font-family: monospace;
+}
+
+#greetings-container input::placeholder {
+  color: black;
+  font-size: 1rem;
+  font-family: monospace;
+}
+
+#main-focus-container {
+  z-index: 1;
+  text-align: center;
+  color: white;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 2;
+  grid-row: 4 / 6;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  font-family: monospace;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+#main-focus-container #main-focus {
+  border: none;
+  border-bottom: 3px solid white;
+  background-color: transparent;
+  font-family: monospace;
+  text-align: center;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#toDoList-container {
+  display: none;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2 / 5;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 3;
+  grid-row: 6 / 9;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -153,44 +187,156 @@ html, body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-family: monospace;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80vh;
-  width: inherit;
+  text-align: center;
+  margin-top: 40px;
+  color: black;
+}
+
+#toDoList-container #add-toDo {
+  background-color: transparent;
   padding: 0;
-  font-size: 2.5em;
-  border: 20px solid white;
+  margin: 0;
+  border: none;
+  font-family: monospace;
+  padding-bottom: 5px;
+}
+
+#toDoList-container #add-toDo:hover {
+  cursor: pointer;
+}
+
+#toDoList-container ul {
+  padding: 0;
+  margin: 0;
+}
+
+#toDoList-container .li {
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  padding: 0;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+#toDoList-container .li:hover,
+#toDoList-container .li button:hover {
+  cursor: pointer;
+}
+
+#toDoList-container #add-btn {
+  height: 2em;
+  width: 2em;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+  background-color: transparent;
+}
+
+#quote-container {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1 / 6;
+  -ms-grid-row: 6;
+  grid-row: 6;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  padding-top: 100px;
+  font-size: 1.5em;
   color: white;
+  font-weight: bolder;
   text-align: center;
   z-index: 1;
 }
 
-#button {
-  background-color: red;
-  border: 20px solid red;
-  width: 200px;
-  height: 50px;
-  text-align: center;
+#quote-container:hover {
+  cursor: pointer;
+}
+
+#quote {
+  position: fixed;
+  padding: 0;
   margin: auto;
-  z-index: 1;
+  font-size: 1em;
 }
 
 #add-quote {
-  background-color: white;
-  width: 100px;
+  -ms-grid-column: 7;
+  grid-column: 7;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  margin: auto;
+  padding: 0;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+#add-quote:hover {
+  cursor: pointer;
+}
+
+#button {
+  -ms-grid-column: 6;
+  grid-column: 6;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  background-color: transparent;
+  width: 100;
+  height: 50%;
+  text-align: center;
   margin: auto;
   z-index: 1;
+  padding: 0;
+  color: white;
+  border: none;
+}
+
+#button:hover {
+  cursor: pointer;
 }
 
 #modal-container {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-column: 4 / 6;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  grid-row: 1 / 5;
   display: none;
-  width: 100%;
-  height: 100%;
+  -ms-grid-columns: (12.5%)[8];
+      grid-template-columns: repeat(8, 12.5%);
+  -ms-grid-rows: (12.5%)[8];
+      grid-template-rows: repeat(8, 12.5%);
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 1;
 }
 
 .modal-content {
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 2;
+  grid-column: 6 / 8;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 4;
+  grid-row: 3 /7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -203,12 +349,14 @@ html, body {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  width: 40vw;
+  width: 25vw;
   height: 280px;
   border: 2px solid purple;
+  border-radius: 20px;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
+  background-color: rgba(10, 176, 218, 0.5);
   z-index: 1;
 }
 
@@ -221,6 +369,11 @@ html, body {
   width: 30%;
   margin-left: auto;
   margin-right: auto;
+}
+
+#quote-text,
+#quote-author {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .toDoList-container h3 {
@@ -239,7 +392,7 @@ html, body {
 #toDo-input {
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid red;
+  border-bottom: 1px solid white;
   padding: 5px;
   color: white;
 }
@@ -268,17 +421,24 @@ html, body {
 .main-div {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 20% 80%;
-      grid-template-columns: 20% 80%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-grid-columns: (12.5%)[8];
+      grid-template-columns: repeat(8, 12.5%);
+  -ms-grid-rows: (12.5%)[8];
+      grid-template-rows: repeat(8, 12.5%);
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url("https://image.freepik.com/free-vector/tropical-landscape-background-zoom_52683-42068.jpg");
   background-size: 100% 100%;
-  width: 100vw;
+  background-repeat: no-repeat;
   height: 100vh;
+  min-width: 800px;
+  min-height: 100vh;
+  margin: 0;
   z-index: 1;
 }
 
@@ -286,13 +446,51 @@ html, body {
   z-index: 1;
 }
 
-.bg-video {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
+#quote-text {
+  z-index: 1;
+}
+
+/*.bg-video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}*/
+@media screen and (max-width: 500px) {
+  .main-div {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (12.5%)[8];
+        grid-template-columns: repeat(8, 12.5%);
+    -ms-grid-rows: (12.5%)[8];
+        grid-template-rows: repeat(8, 12.5%);
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  .main-column {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (12.5%)[8];
+        grid-template-columns: repeat(8, 12.5%);
+    -ms-grid-rows: (12.5%)[8];
+        grid-template-rows: repeat(8, 12.5%);
+  }
+  #button {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+  }
+  #add-quote {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

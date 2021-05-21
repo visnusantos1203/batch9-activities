@@ -9,48 +9,58 @@
     <title>Momentum App</title>
 </head>
 <body onload="displayTime()">
-   <div class="video-bg">
+    
+    <div class="main-div">
+
+        <div class="main-column">
+            <div id="quote-container">
+                <p id="quote">
+                    "You don’t have to be great to start, but you have to start to be great." -Zig Ziglar
+                </p> 
+            </div>
+            <div id="modal-container">
+                <div class="modal-content">
+                    <label for="quote-text">Quote Text</label>
+                    <textarea id="quote-text" name="quote-text" placeholder="Enter quote..."></textarea>
+                    <label for="quote-author">Quote Author</label>
+                    <input type="text" id="quote-author" name="quote-author" placeholder="Enter Quote's Author">
+                    <button id="quote-submit"> Add Quote</button>
+                    <button id="quote-cancel"> Cancel</button>
+                </div>
+            </div>
+            <button type="button" onclick="randomQuote()" id="button"> Motivate me </button>    
+            <button id="add-quote">Add Quote</button>
+
+            <div id="time-container"></div>
+            <div id="greetings-container">
+                <h1 id="greetings-text" contenteditable="false"></h1>
+                <input type="text" name="greetings" id="greetings" placeholder="enter your name here">
+                <div id="main-focus-container">
+                    <h3 id="main-focus-question">What's your main focus for today?</h3>
+                    <h3 id="main-focus-questio"></h3>
+                    <input type="text" id="main-focus">
+                    <h2 id="main-focus-display"></h2>
+                </div>
+            </div>
+            <div id="toDoList-container">
+                <h3>Anything you want me to remind you of?</h3>
+                <input type="text" name="toDo-input" id="toDo-input" size="35">
+                <button id="add-toDo"> <img src="./assets/add.svg" alt="" id="add-btn"> </button>
+                <ul class="list-container"></ul>
+            </div>    
+
+        </div>
+
+        <div class="side-bar">
+        </div>
+
+    </div>
+
+   <!-- <div class="video-bg">
         <video autoplay loop muted class="bg-video">
             <source type="video/mp4" src="./assets/beach.mp4">
         </video>
-    </div>
-    <div class="main-div">
-        <div class="side-bar">
-            <div id="time-container"></div>
-            <div id="main-focus-container">
-                <h3 id="main-focus-question">What's your main focus for today?</h3>
-                <h3 id="main-focus-questio"></h3>
-                <input type="text" id="main-focus">
-                <h2 id="main-focus-display"></h2>
-            </div>
-            <div id="toDoList-container">
-                <h3>To Do List</h3>
-                <input type="text" name="toDo-input" id="toDo-input">
-                <button id="add-toDo">Add new to do</button>
-                <ul class="list-container"></ul>
-            </div>
-            </div>    
-        </div>
-        <div class="main-column">
-            <div id="quote-container">"You Don’t Have To Be Great To Start, But You Have To Start To Be Great." -Zig Ziglar
-                <div id="modal-container">
-                    <div class="modal-content">
-                        <label for="quote-text">Quote Text</label>
-                        <textarea id="quote-text" name="quote-text" placeholder="Enter quote..."></textarea>
-                        <label for="quote-author">Quote Author</label>
-                        <input type="text" id="quote-author" name="quote-author" placeholder="Enter Quote's Author">
-                        <button id="quote-submit"> Add Quote</button>
-                        <button id="quote-cancel"> Cancel</button>
-                    </div>
-                </div>
-            </div>
-            <button id="add-quote">Add quote ➕</button>
-            <button type="button" onclick="randomQuote()" id="button">Get random quote</button>
-            <div id="greetings-container">
-                <span id="greetings-text" contenteditable="false"></span>
-                <input type="text" name="greetings" id="greetings" placeholder="your name here">
-            </div>
-        </div>
-    </div>
+    </div>-->
+
 </body>
 </html>

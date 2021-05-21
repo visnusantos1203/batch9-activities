@@ -1,28 +1,35 @@
-#add-quote{
-    background-color: white;
-    width: 100px;
-    margin: auto;
-    z-index: 1;
-}
+
 
 #modal-container{
+    grid-column: 4 / 6;
+    grid-row: 1 / 5;
     display: none;
-    width: 100%;
-    height: 100%;
+    grid-template-columns: repeat(8, 12.5%);
+    grid-template-rows: repeat(8, 12.5%);
+    align-content: center;
+    justify-content: center;
+    //width: 100%;
+    //height: 100%;
     z-index: 1;
 }
 
 .modal-content{
+    grid-column: 6 / 8;
+    grid-row: 3 /7;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    width: 40vw;
+    width: 25vw;
     height: 280px;
     border: 2px solid purple;
+    border-radius: 20px;
+
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
+    background-color: rgba(10, 176, 218, 0.5);
+
     z-index: 1;
     label{
         text-align: left;
@@ -33,4 +40,8 @@
         margin-left: auto;
         margin-right: auto;
     }
+}
+#quote-text,
+#quote-author{
+    background-color: rgba(255, 255, 255, 0.5);
 }
