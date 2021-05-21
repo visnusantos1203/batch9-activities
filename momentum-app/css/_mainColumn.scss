@@ -1,11 +1,11 @@
 @mixin container {
-    width: inherit;
-    height: inherit;
-    min-width: 400px;
-    min-height: 200px;;
+    //width: inherit;
+    //height: inherit;
+    //min-width: 400px;
+    //min-height: 200px;;
     z-index: 1;
     text-align: center;
-    border: 1px solid black;
+    //border: 1px solid black;
     color: white;
 }
 
@@ -15,29 +15,55 @@
 }
 
 .main-column{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-content: center;
-    height: 100vh;
-    width: 80vw;
+    //width: 50%;
+    //min-height: 100vh;
+    grid-column: 3 / 9;
+    grid-row:1 / 9;
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    grid-template-rows: repeat(8, 12.5%);
+
+    //justify-content: center;
+    //flex-direction: column;
+    //align-content: center;
+    //height: 100vh;
+    //width: 80vw;
+    //border: 50px solid red;
     z-index: 1;
-    border: 50px solid white
 }
 
+#time-container{
+    grid-column: 2 / 5;
+    grid-row: 2;
+    @include container;
+    display: block;
+    margin: auto;
+    align-content: center;
+    //margin: auto;
+    font-family: "clock2";
+    font-size: 5em
+    //background-color: rgba(255, 255, 255, 0.2);
+}
+
+
 #greetings-container{
+    grid-column: 1 / 6;
+    grid-row: 5;
     display: flex;
     justify-content: space-evenly;
     align-content: center;
     flex-direction: column;
-    border: 10px solid black;
+    //border: 10px solid black;
     margin: 0;
+    padding: 0;
     z-index: 1;
+    font-family: monospace;    
     #greetings-text{
-        font-size: 4em;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 3em;
+        font-family: monospace;
         text-align: center;
         color: white;
+        margin: 0;
     }  
     input{
         display: block;
@@ -46,39 +72,159 @@
         margin: auto;
         margin-top: 0;
         padding-right: 20px;
-        width: inherit;
-        height: inherit;
-        max-height: 20vh;
+        //width: inherit;
+        //height: inherit;
+        //max-height: 20vh;
         text-align: center;
         font-size: 2em;
+        font-family: monospace;
         background-color: transparent;
-        color: white;
-        
+        color: orangered;
+        &::placeholder{
+            color: black;
+            font-size: 1rem;
+            font-family: monospace;
+        }
     }
 }
 
-#quote-container{
-    display: flex;
-    flex-direction: column;
+#main-focus-container{
+    @include container;
+    grid-column: 2 / 4;
+    grid-row: 4 / 6;
+    display: none;
     justify-content: center;
-    align-items: center;
-    height: 80vh;
-    width: inherit;
+    align-content: center;
+    font-family: monospace;
+    font-size: 1.5em;
+    margin: 0;
     padding: 0;
-    font-size: 2.5em;
-    border: 20px solid white;
-    color: white;
-    text-align: center;
-    z-index: 1;
+    color: black;
+    #main-focus{
+        border: none;
+        border-bottom: 3px solid white;
+        background-color: transparent;
+        font-family: monospace;
+        text-align: center;
+        color: black;
+        margin-top: 0;
+        margin-bottom: 0;
+        //margin: 0;
+    }
 }
 
+#toDoList-container{
+    display: none;
+    @include container;
+    grid-column: 2 / 5;
+    grid-row: 6 / 9;
+    flex-direction: column;
+    justify-content: center;
+    font-family: monospace;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    color: black;
+    #add-toDo{
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        border: none;
+        font-family: monospace;
+        //border-bottom: 3px solid red;
+        padding-bottom: 5px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    ul{
+        padding: 0;
+        margin: 0;
+    }
+    
+
+    .li{
+        text-align: center;
+        margin: auto;
+        width: 100%;
+        padding: 0;
+        font-family: monospace;
+        font-size: 20px;
+        &:hover,
+        button:hover{
+            cursor: pointer;
+        }
+    }
+
+    #add-btn{
+        height: 2em;
+        width: 2em;
+        padding: 0;
+        margin: 0;
+        font-family: monospace;
+        background-color: transparent;
+    }
+}
+   
+
+#quote-container{
+    grid-column: 1 / 6;
+    grid-row: 6;
+    display: none;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    //max-width: 1000px;
+    //height: 80vh;
+    //width: inherit;
+    padding: 0;
+    padding-top: 100px;
+    font-size: 1.5em;
+    //border: 5px solid white;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    z-index: 1;
+    &:hover{
+        cursor: pointer;
+    }
+}
+#quote{
+    position: fixed;
+    padding: 0;
+    margin: auto;
+    font-size: 1em;
+}
+
+#add-quote{
+    grid-column: 7;
+    grid-row: 1;
+    margin: auto;
+    padding: 0;
+    background-color: transparent;
+    color: white;
+    border: none;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
 #button{
-    background-color: red;
-    border: 20px solid red;
-    width: 200px;
-    height: 50px;
+    grid-column: 6;
+    grid-row: 1;
+    background-color: transparent;
+    //border: 20px solid red;
+    width: 100;
+    height: 50%;
     text-align: center;
     margin: auto;
     z-index: 1;
+    padding: 0;
+    color: white;
+    border: none;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
