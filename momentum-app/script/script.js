@@ -5,9 +5,6 @@ var timeContainer =  document.getElementById('time-container');
 
 function displayTime(){
     var time = new Date();
-    var month = time.getMonth();
-    var day = time.getDate();
-    var year = time.getFullYear();
     var h = time.getHours();
     var m = time.getMinutes();
     m = checkTime(m);
@@ -20,7 +17,7 @@ function displayTime(){
         };
     };    
     
-    timeContainer.textContent = `${month} ${year} ${day} ${h}:${m} ${ifAmOrPm()}`;
+    timeContainer.textContent = `${h}:${m} ${ifAmOrPm()}`;
     var t = setTimeout(displayTime, 1000);
 
     function checkTime(i) {
