@@ -1,46 +1,54 @@
-var today = new Date();
-var h = today.getHours();
-var m = today.getMinutes();
+window.onload= function() {
+    displayTime();
+}
 var timeContainer =  document.getElementById('time-container');
 
-var ifAmOrPm = function(){
-    if(h > 11){
-        return "pm"
-    } else{
-        return"am"
-    };
-}
-if(m < 10){
-    m = `0${m}`
-}
+function displayTime(){
+    var time = new Date();
+    var h = time.getHours();
+    var m = time.getMinutes();
+    m = checkTime(m);
+    var ifAmOrPm = function(){
+        if(h > 11){
+            return "pm"
+        } else{
+            return"am"
+        };
+    };    
+    
+    timeContainer.textContent = `${h}:${m} ${ifAmOrPm()}`;
+    var t = setTimeout(displayTime, 1000);
 
-function startTime() {
-   // m = checkTime(m);
- 
-    timeContainer.innerHTML = `${h}:${m} ${ifAmOrPm()}`;
-    var t = setTimeout(startTime, 500);
-}
-
-// Adds greeting text and event listener
-var greetingsText = document.getElementById("greetings-text");
-var input = document.getElementById("greetings")
-
-input.addEventListener("keypress", userName)
-function userName(e){
-    if(e.which === 13){
-    greetingsText.innerText = `Good ${ifMorningOrEvening()}, ${e.target.value}!`
-    return input.remove();
+    function checkTime(i) {
+        // add zero in front of numbers < 10
+    
+        if (i < 10) {i = "0" + i};
+        return i;
     }
+    // Adds greeting text and event listener
+
+    var greetingsText = document.getElementById("greetings-text");
+    var input = document.getElementById("greetings")
+
+    input.addEventListener("keypress", userName)
+    function userName(e){
+        if(e.which === 13){
+        greetingsText.innerText = `Good ${ifMorningOrEvening()}, ${e.target.value}!`
+        return input.remove();
+        }
+    }
+
+    var ifMorningOrEvening = function(){
+        if(ifAmOrPm() === "am"){
+            return "morning"
+        } else{
+            return "evening"
+        }
+    }
+    greetingsText.innerText = `Good ${ifMorningOrEvening()}!`
+
 }
 
-var ifMorningOrEvening = function(){
-    if(ifAmOrPm() === "am"){
-        return "morning"
-    } else{
-        return "evening"
-    }
-}
-greetingsText.innerText = `Good ${ifMorningOrEvening()}!`
 
 // Main focus codes here
 var displayMainFocus = document.getElementById("main-focus-display");
@@ -93,19 +101,20 @@ var arrayOfQuotes = [
     quote: "Failure Will Never Overtake Me If My Determination To Succeed Is Strong Enough."
     }
 ]
-
+/*var randomQuoteBtn = document.getElementById("button");
+randomQuoteBtn.addEventListener("click", randomQuote);*/
 
 function randomQuote(){
-    var quoteContainer = document.getElementById("quote-container");
+    var quoteContainer = document.querySelector("#quote-container");
     var quoteRandomizer = arrayOfQuotes[Math.floor(Math.random()* arrayOfQuotes.length)];
     var randomizedQuote = `"${quoteRandomizer.quote}" - ${quoteRandomizer.author}`;
-    console.log(randomizedQuote);
-
+    console.log(quoteRandomizer);
     quoteContainer.innerText = randomizedQuote;
     quoteContainer.style.fontSize = "3.5em";
     quoteContainer.style.fontFamily = "monoscape";
     quoteContainer.style.textAlign = "center";
 };
+    console.log(randomQuote);
 
 //modal codes
 var modalContainer = document.getElementById("modal-container");
@@ -147,7 +156,7 @@ submitBtn.addEventListener("click", onSubmit);
         modalContainer.style.display = "none";
         addQuoteBtn.style.display = "block";
     }
-console.log(arrayOfQuotes);
+//console.log(arrayOfQuotes);
 
 // code for todo list
 var ul = document.querySelector(".list-container");
@@ -155,6 +164,7 @@ var addBtn = document.getElementById("add-toDo");
 var toDoInput = document.getElementById("toDo-input");
 
 //adds event listener to add button
+
 addBtn.onclick = function(){
     var createLi = document.createElement("li");
     createLi.innerText = toDoInput.value;
