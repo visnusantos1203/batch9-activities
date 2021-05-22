@@ -78,6 +78,7 @@ function mainFocus(e){
 }
 
 
+
 //quote codes here
 var arrayOfQuotes = [
     {
