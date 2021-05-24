@@ -1,0 +1,14 @@
+.game-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 50vmin;
+    height: 50vmin;
+    border: 1px solid red;
+    /*:nth-child(odd){
+        background-color: black;
+    }*/
+    .cell{
+        border: 1px solid black;
+    }
+}
