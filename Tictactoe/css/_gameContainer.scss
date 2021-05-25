@@ -1,14 +1,38 @@
+--root{
+    --cell-size: 100px;
+}
+
 .game-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    width: 50vmin;
-    height: 50vmin;
-    border: 1px solid red;
-    /*:nth-child(odd){
-        background-color: black;
-    }*/
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+    width: 100vw;
+    height: 100vh;
+    background-color: lightblue;
+    //border: 1px solid red;
     .cell{
+        width: var(--cell-size);
         border: 1px solid black;
+    }
+    :nth-child(1),
+    :nth-child(2),
+    :nth-child(3){
+        border-top: transparent;
+    }
+    :nth-child(1),
+    :nth-child(4),
+    :nth-child(7){
+        border-left: transparent;
+    }
+    :nth-child(3),
+    :nth-child(6),
+    :nth-child(9){
+        border-right: transparent;
+    }
+    :nth-child(7),
+    :nth-child(8),
+    :nth-child(9){
+        border-bottom: transparent;
     }
 }
