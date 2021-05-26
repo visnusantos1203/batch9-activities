@@ -11,17 +11,22 @@
 
 @import "./gameContainer";
 @import "./btnContainer";
+@import "./modal";
 
 body{
     margin: 0;
     padding: 0;
 }
 
+header{
+    display: block;
+}
 .main-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
     width: 100vw;
     height: 100vh;
 }
