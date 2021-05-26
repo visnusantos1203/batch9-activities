@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./script/script.js"></script>
+    <script src="./script/script.js" defer></script>
     <link rel="stylesheet" href="./css/styles.css">
     <title>Document</title>
 </head>
@@ -14,21 +14,26 @@
     </header>
 
     <div class="main-container">
-        <span id="turn-span"> <span id="whose-turn"></span> 's turn!</span>
+        <h2 class="game-status"></h2>
         <div class="game-container" id="game-container" >
-            <div class="cell 1" data-cell></div>
-            <div class="cell 2" data-cell></div>
-            <div class="cell 3" data-cell></div>
-            <div class="cell 4" data-cell></div>
-            <div class="cell 5" data-cell></div>
-            <div class="cell 6" data-cell></div>
-            <div class="cell 7" data-cell></div>
-            <div class="cell 8" data-cell></div>
-            <div class="cell 9" data-cell></div>
+            <div class="cell 1" data-cell-index="0"></div>
+            <div class="cell 2" data-cell-index="1"></div>
+            <div class="cell 3" data-cell-index="2"></div>
+            <div class="cell 4" data-cell-index="3"></div>
+            <div class="cell 5" data-cell-index="4"></div>
+            <div class="cell 6" data-cell-index="5"></div>
+            <div class="cell 7" data-cell-index="6"></div>
+            <div class="cell 8" data-cell-index="7"></div>
+            <div class="cell 9" data-cell-index="8"></div>
         </div>
+        <div class="btn-container">
+            <button id="restartBtn">Previous</button>
+            <button id="restartBtn">Restart</button>
+            <button id="restartBtn">Next</button>
+        </div>
+
         <div class="winning-message" id="winning-message">
             <div data-winning-message-text ></div>
-            <button id="restartBtn">Restart</button>
         </div>
     </div>
     

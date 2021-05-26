@@ -19,21 +19,22 @@
 .game-container {
   display: -ms-grid;
   display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -ms-grid-columns: (auto)[3];
-      grid-template-columns: repeat(3, auto);
-  width: 100vw;
-  height: 100vh;
-  background-color: lightblue;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  width: 50vmin;
+  height: 50vmin;
+  margin: 50px auto;
 }
 
 .game-container .cell {
-  width: var(--cell-size);
   border: 1px solid black;
+  cursor: pointer;
+  font-size: 100px;
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .game-container :nth-child(1),
@@ -58,6 +59,24 @@
 .game-container :nth-child(8),
 .game-container :nth-child(9) {
   border-bottom: transparent;
+}
+
+.btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 50vmin;
+  height: 50px;
+  border: 1px solid red;
+}
+
+.btn-container button {
+  width: 25%;
+  cursor: pointer;
 }
 
 body {
