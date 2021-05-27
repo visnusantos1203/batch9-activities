@@ -1,12 +1,22 @@
 const statusDisplay = document.querySelector(".game-status")
 const winner = document.getElementById("winner");
 let gameActive = true;
-let currentPlayer = "X";
 let gameState = ["", "", "", "", "", "", "", "", ""];
+let currentPlayer;
+
 const winningMessage = () => `${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
 statusDisplay.innerHTML = currentPlayerTurn();
+
+const xBtn = document.getElementById("X");
+
+xBtn.addEventListener("click", xTurn);
+function xTurn(){
+    currentPlayer = "X";
+} console.log(currentPlayer);
+
+
 
 function handleCellClick(clickedCellEvent) {
     const clickedCell = clickedCellEvent.target;
@@ -15,13 +25,13 @@ function handleCellClick(clickedCellEvent) {
     );
     //ipupush sa index ng gameHistory gamit yung clickedCellIndex yung current player
 
-    for(let i = 0; i < gameHistory.length; i++){
+    /*for(let i = 0; i < gameHistory.length; i++){
         if(i === clickedCellIndex){
         gameHistory[i] = currentPlayer;
         //console.log(clickedCellIndex);
         //console.log(gameHistory);
         }
-    };
+    };*/
 
     if (gameState[clickedCellIndex] !== "" || !gameActive) {
          return;
@@ -30,10 +40,11 @@ function handleCellClick(clickedCellEvent) {
     handleResultValidation();
 }
 
-
+//dito ma didisplay sa clicked cell kung anong letter mag lalaro
 function handleCellPlayed(clickedCell, clickedCellIndex) {
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
+    //clickedCell.style.fontSize = "80%";
 }
 
 const winningConditions = [
@@ -65,7 +76,7 @@ function handleResultValidation() {
         }
     }
     if (roundWon) {
-        statusDisplay.innerHTML = "Game Over!";
+        statusDisplay.innerHTML = `Game Over! ${winningMessage()}`;
         winner.innerHTML = winningMessage();
         gameActive = false;
 
@@ -102,30 +113,7 @@ function onHover(e){
     }
 }
 // try lang to
-let gameHistory = ["", "", "", "", "", "", "", "", ""];
 
-function gameHis(clickedCellEvent) {
-    gameHistory.forEach(myFUnction);
-
-    const clickedCelll = clickedCellEvent.target;
-    const clickedCelllIndex = parseInt(
-        clickedCelll.getAttribute('data-cell-index')
-    );
-    //ipupush sa index ng gameHistory gamit yung clickedCellIndex yung current player
-
-    for(let i = 0; i < gameHistory.length; i++){
-        if(i === clickedCelllIndex){
-        gameHistory[i] = currentPlayer;
-        console.log(clickedCelllIndex);
-        console.log(gameHistory);
-        }
-    };
-    function myFUnction(item, index){
-        if(clickedCelllIndex === index){
-            clickedCellIndex.innerHTML = item;
-        }
-    };
-};  gameHis();  
 //try lang to
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
