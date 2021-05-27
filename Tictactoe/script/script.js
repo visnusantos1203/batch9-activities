@@ -1,6 +1,6 @@
 const statusDisplay = document.querySelector(".game-status")
 const winner = document.getElementById("winner");
-let gameActive = true;
+let gameActive = false;
 let gameState = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer;
 
@@ -10,13 +10,28 @@ const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
 statusDisplay.innerHTML = currentPlayerTurn();
 
 const xBtn = document.getElementById("X");
+const oBtn = document.getElementById("O");
+const turnContainer = document.getElementById("turn-container");
+
+//decides who takes the first move
 
 xBtn.addEventListener("click", xTurn);
 function xTurn(){
     currentPlayer = "X";
+    gameActive = true;
+    handlePlayerChange();
+    turnContainer.style.display = "none";
+    statusDisplay.style.display = "block"
 } console.log(currentPlayer);
 
-
+oBtn.addEventListener("click", oTurn);
+function oTurn(){
+    currentPlayer = "O";
+    gameActive = true;
+    handlePlayerChange();
+    turnContainer.style.display = "none";
+    statusDisplay.style.display = "block"
+} console.log(currentPlayer);
 
 function handleCellClick(clickedCellEvent) {
     const clickedCell = clickedCellEvent.target;
@@ -38,13 +53,13 @@ function handleCellClick(clickedCellEvent) {
     }
     handleCellPlayed(clickedCell, clickedCellIndex);
     handleResultValidation();
+    onHover();
 }
 
 //dito ma didisplay sa clicked cell kung anong letter mag lalaro
 function handleCellPlayed(clickedCell, clickedCellIndex) {
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
-    //clickedCell.style.fontSize = "80%";
 }
 
 const winningConditions = [
@@ -97,16 +112,19 @@ function handlePlayerChange() {
 } console.log(currentPlayer);
 
 function handleRestartGame() {
-    gameActive = true;
-    currentPlayer = "X";
+    gameActive = false;
+    //currentPlayer = "X";
     gameState = ["", "", "", "", "", "", "", "", ""];
     statusDisplay.innerHTML = currentPlayerTurn();
+    turnContainer.style.display = "flex";
+    statusDisplay.style.display = "none"
+
     document.querySelectorAll('.cell')
         .forEach(cell => cell.innerHTML = "");
 }
 
 function onHover(e){
-    if(gameActive){
+    if(gameActive === true){
         e.target.textContent = "X";
     } else{
         e.target.textContent = "O";
@@ -118,3 +136,7 @@ function onHover(e){
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
 document.querySelector('#restartBtn').addEventListener('click', handleRestartGame);
+
+
+
+
