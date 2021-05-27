@@ -16,6 +16,11 @@
   --cell-size: 100px;
 }
 
+@font-face {
+  font-family: bubble;
+  src: url("../Bubble3d-R80o.ttf");
+}
+
 .game-container {
   display: -ms-grid;
   display: grid;
@@ -23,22 +28,23 @@
       grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: (1fr)[3];
       grid-template-rows: repeat(3, 1fr);
-  width: 50vmin;
-  height: 50vmin;
+  width: 55vmin;
+  height: 55vmin;
   margin: 50px auto;
-  border: 10px solid black;
-  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
 }
 
 .game-container .cell {
-  border: 1px solid black;
+  border: 5px solid white;
   width: calc(100 / 3);
   height: calc(100 / 3);
   cursor: pointer;
-  font-size: 13vmin;
+  font-family: bubble;
+  font-size: 15vmin;
   text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .game-container :nth-child(1),
@@ -137,6 +143,11 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/s66-fon-0011-l_1.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b2d0b694dbb90e46b965722e237d3580");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position-x: center;
+  background-position-y: center;
 }
 
 header {
@@ -162,6 +173,8 @@ header {
           align-items: center;
   width: 100vw;
   height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .game-status {

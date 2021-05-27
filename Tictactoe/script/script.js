@@ -20,9 +20,12 @@ function xTurn(){
     currentPlayer = "X";
     gameActive = true;
     handlePlayerChange();
+
+    console.log(currentPlayer);
+
     turnContainer.style.display = "none";
-    statusDisplay.style.display = "block"
-} console.log(currentPlayer);
+    statusDisplay.style.display = "block";
+} 
 
 oBtn.addEventListener("click", oTurn);
 function oTurn(){
@@ -53,7 +56,6 @@ function handleCellClick(clickedCellEvent) {
     }
     handleCellPlayed(clickedCell, clickedCellIndex);
     handleResultValidation();
-    onHover();
 }
 
 //dito ma didisplay sa clicked cell kung anong letter mag lalaro
@@ -108,8 +110,9 @@ function handleResultValidation() {
 
 function handlePlayerChange() {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
+ 
     statusDisplay.innerHTML = currentPlayerTurn();
-} console.log(currentPlayer);
+}
 
 function handleRestartGame() {
     gameActive = false;
@@ -123,13 +126,13 @@ function handleRestartGame() {
         .forEach(cell => cell.innerHTML = "");
 }
 
-function onHover(e){
+/*function onHover(e){
     if(gameActive === true){
         e.target.textContent = "X";
     } else{
         e.target.textContent = "O";
     }
-}
+}*/
 // try lang to
 
 //try lang to
