@@ -16,6 +16,12 @@
 body{
     margin: 0;
     padding: 0;
+    background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/s66-fon-0011-l_1.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b2d0b694dbb90e46b965722e237d3580");
+    //background-image: url('../assets/20082.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position-x: center;
+    background-position-y: center;
 }
 
 header{
@@ -32,6 +38,8 @@ header{
     //margin-top: 100px;
     width: 100vw;
     height: 100vh;
+    padding: 0;
+    margin: 0;
     //background-color: aquamarine;
 }
 
