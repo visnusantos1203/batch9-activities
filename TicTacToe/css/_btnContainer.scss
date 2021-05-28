@@ -1,0 +1,12 @@
+.btn-container{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    width: 50vmin;
+    height: 50px;
+    border: 1px solid red;
+    button{
+        width: 25%;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script/script.js" defer></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>TicTacToe</title>
+</head>
+<body onload="setHalfVolume()">
+    <header>
+        <span id="tic">Tic</span><span id="tac">Tac</span><span id="toe">Toe</span> 
+    </header>
+
+    <div class="main-container">
+        <div id="turn-container">
+            <span id="firstTurn"> Who should start first?</span>
+            <div>
+                <button id="O">X</button>
+                <button id="X">O</button>
+            </div>    
+        </div>
+        <span class="game-status"></span>
+        <div class="game-container" id="game-container" >
+            <div class="cell 1" data-cell-index="0"></div>
+            <div class="cell 2" data-cell-index="1"></div>
+            <div class="cell 3" data-cell-index="2"></div>
+            <div class="cell 4" data-cell-index="3"></div>
+            <div class="cell 5" data-cell-index="4"></div>
+            <div class="cell 6" data-cell-index="5"></div>
+            <div class="cell 7" data-cell-index="6"></div>
+            <div class="cell 8" data-cell-index="7"></div>
+            <div class="cell 9" data-cell-index="8"></div>
+        </div>
+       <!-- <div class="btn-container">
+            <button id="restartBt">Previous</button>
+            <button id="restartBtn">Restart</button>
+            <button id="restartBt">Next</button>
+        </div> -->
+
+        <div class="modal-container" id="winning-message">
+            <div class="modal">
+                <div id="result-message-container">
+                    <h1 id="result-message"></h1>
+                </div>
+                <div id="winner-container">
+                    <h2 id="winner"></h2>
+                </div>
+                <div id="button-container">
+                    <button id="new-game">New Game</button>
+                    <button>Game History</button>    
+                </div>
+                <div id="score-board">
+                    <span >Score Board</span>
+                </div>
+                <div class="score">
+                    <div id="player1">
+                        <span>Player X</span>
+                        <span id="p1-score">0</span>
+                    </div>
+                    <div id="player2">
+                        <span>Player O</span>
+                        <span id="p2-score">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="audio"  src="https://r2---sn-jvhja5g3-hoad.googlevideo.com/videoplayback?expire=1622213825&ei=YbCwYJipBobr8gSM9qaIDg&ip=104.222.219.34&id=o-APcUsma0uIlOFZwcXf-yLKJ-buk4Gi-qq8b9NSoQvj-i&itag=250&source=youtube&requiressl=yes&vprv=1&mime=audio%2Fwebm&ns=WkM3WYgKlldHzIO71bxSYXwF&gir=yes&clen=116892976&dur=10842.961&lmt=1582616130859070&keepalive=yes&fexp=24001373,24007246&c=WEB&txp=5431432&n=fnY0b2o3tHCIQbAh7I&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAIzAaoGEY6SYUFE8jrgYPtohTlh7XNptlP4oLnURVK_MAiEAi5zNXrR579V9SGTnd5IuFD30c4Qfyq9vJc583BSza5k%3D&title=Happy%20Relaxing%20Guitar%20Music%20For%20Children&redirect_counter=1&rm=sn-5uad676&req_id=49a42e32c0dea3ee&cms_redirect=yes&ipbypass=yes&mh=F_&mip=120.29.69.149&mm=31&mn=sn-jvhja5g3-hoad&ms=au&mt=1622191968&mv=m&mvi=2&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgJITMgFRirSQaCbCyaVGNMyGTcxlWnejfLlwWWyWdM-wCIQDFfaFdm6mcM5oIpbjKdUNBGvLufhx4pdb-VDuoSTTACw%3D%3D" loop="false" autoplay="true" hidden="true"></audio>
+    <script>
+        function setHalfVolume() {
+            var myAudio = document.getElementById("audio");
+            myAudio.volume = 0.1;
+        }
+    </script>
+</body>
+</html>
