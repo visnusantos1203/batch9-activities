@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+}
+*::after, *::before{
+    box-sizing: border-box;
+}
+
+--root{
+    --cell-size: 100px;
+}
+
+@import "./gameContainer";
+@import "./btnContainer";
+@import "./modal";
+
+@font-face {
+    font-family: bubble;
+    src: url("../Bubble3d-R80o.ttf");
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../assets/1926.jpg");
+    //background-image: url('../assets/20082.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+header{
+    display: block;
+    height: 10%;
+    width: auto;
+    //border: 1px solid black;
+    font-family: bubble;
+    font-weight: lighter;
+    font-size: 10vmin;
+    padding: 20px;
+    #tic{
+        color: lightblue;
+    }
+    #tac{
+        color: lightyellow;
+    }
+    #toe{
+        color: lightseagreen;
+    }
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    align-items: center;
+    //margin-top: 100px;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: bubble;
+    font-weight: lighter;
+    //background-color: aquamarine;
+}
+
+.game-status{
+    display: none;
+    font-size: 6vmin;
+    font-weight: lighter;
+    color: palevioletred;
+}
+
+#turn-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span{
+        font-size: 6vmin;
+        font-weight: lighter;
+        color: palevioletred;
+    }
+    div{
+        padding: 20px;
+        width: 50%;
+        height: 35%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        button{
+            margin-top: 20px;
+            border-radius:35%;
+            width: 7vmin;
+            height: 6vmin;
+            background-color: rgba(255, 244, 185, 0.918);
+            border: 3px dotted orange;
+            font-family: bubble;
+            font-weight: lighter;
+            font-size: 4vmin;   
+            color: salmon;     
+        }
+    }
+}
+/*
+@media (max-height: 700px){
+    .game-container .cell{
+        font-size: 5rem;
+    }
+}
+
+@media (max-height: 600px){
+    .game-container .cell{
+        font-size: 4rem;
+    }
+}*/
