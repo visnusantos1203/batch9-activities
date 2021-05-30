@@ -27,7 +27,7 @@
         align-items: center;
         margin: 0;
         padding: 0;
-        background-color: #E2F0CB;
+        background-color: white;
         border-radius: 30px;
         font-family: bubble;
         color: rgb(189, 26, 134);
@@ -36,18 +36,18 @@
             width: 90%;
             text-align: center;
             //border-top: 5px double white;
-            border-bottom: 5px double white;
+            //border-bottom: 5px double white;
             h1{
                 font-size: 4.5vmin;
                 font-weight: lighter;
-                color: #FF9AA2;
+                color: rgb(189, 26, 134);
             }
         }
         #winner-container{
             width: 100%;
             text-align: center;
             h2{
-                font-size: 5vmin;
+                font-size: 6vmin;
                 font-weight: lighter;
                 color: #FF9AA2;
             }
@@ -65,6 +65,8 @@
                 height: 100%;
                 border: transparent;
                 background-color: transparent;
+                font-size: 3vmin;
+                color: rgb(189, 26, 134);
                 &:hover{
                     cursor: pointer;
                 }    
