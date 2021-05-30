@@ -13,6 +13,15 @@
         <span id="tic">Tic</span><span id="tac">Tac</span><span id="toe">Toe</span> 
     </header>
 
+    <div class="play-game">
+        <img id="gif" src="https://media.giphy.com/media/LtGpcWj3donEg3Doj2/giphy.gif" alt="gif">
+        <button id="playBtn">
+            <img src="https://www.transparentpng.com/thumb/play/zh3yXb-play-button-png-image-free-download-searchpng.png" alt="Play Game">
+        </button>
+        <span id="start">Start Game</span>
+
+    </div>
+
     <div class="main-container">
         <div id="turn-container">
             <span id="firstTurn"> Who should start first?</span>
@@ -44,6 +53,7 @@
                 <div id="result-message-container">
                     <h1 id="result-message"></h1>
                 </div>
+                🎉
                 <div id="winner-container">
                     <h2 id="winner"></h2>
                 </div>
@@ -68,7 +78,6 @@
         </div>
     </div>
     
-    <audio id="audio"  src="https://r2---sn-jvhja5g3-hoad.googlevideo.com/videoplayback?expire=1622213825&ei=YbCwYJipBobr8gSM9qaIDg&ip=104.222.219.34&id=o-APcUsma0uIlOFZwcXf-yLKJ-buk4Gi-qq8b9NSoQvj-i&itag=250&source=youtube&requiressl=yes&vprv=1&mime=audio%2Fwebm&ns=WkM3WYgKlldHzIO71bxSYXwF&gir=yes&clen=116892976&dur=10842.961&lmt=1582616130859070&keepalive=yes&fexp=24001373,24007246&c=WEB&txp=5431432&n=fnY0b2o3tHCIQbAh7I&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAIzAaoGEY6SYUFE8jrgYPtohTlh7XNptlP4oLnURVK_MAiEAi5zNXrR579V9SGTnd5IuFD30c4Qfyq9vJc583BSza5k%3D&title=Happy%20Relaxing%20Guitar%20Music%20For%20Children&redirect_counter=1&rm=sn-5uad676&req_id=49a42e32c0dea3ee&cms_redirect=yes&ipbypass=yes&mh=F_&mip=120.29.69.149&mm=31&mn=sn-jvhja5g3-hoad&ms=au&mt=1622191968&mv=m&mvi=2&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgJITMgFRirSQaCbCyaVGNMyGTcxlWnejfLlwWWyWdM-wCIQDFfaFdm6mcM5oIpbjKdUNBGvLufhx4pdb-VDuoSTTACw%3D%3D" loop="false" autoplay="true" hidden="true"></audio>
     <script>
         function setHalfVolume() {
             var myAudio = document.getElementById("audio");

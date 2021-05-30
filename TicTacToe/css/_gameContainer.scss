@@ -7,14 +7,15 @@
     src: url("../Bubble3d-R80o.ttf");
 }
 .game-container{
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     width: 55vmin;
     height: 55vmin;
-    margin: 20px auto;
+    margin: auto;
+    margin-top: 0;
     //border: 10px solid lightgray;
-    background-color: rgba(252, 252, 252, 0.3);
+    //background-color: rgb(252, 252, 252);
     box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3),
                 -5px -10px 10px 5px rgba(0, 0, 0, 0.3);
     border-radius: 30px;
