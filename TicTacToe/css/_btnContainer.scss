@@ -1,12 +1,17 @@
 .btn-container{
-    display: flex;
+    display: none;
     justify-content: space-around;
     align-content: center;
-    width: 50vmin;
+    width: 55vmin;
     height: 50px;
     border: 1px solid red;
+    #prev-btn,
+    #next-btn{
+        visibility:hidden;
+    }
     button{
         width: 25%;
         cursor: pointer;
+        border-radius: 20px;
     }
 }
