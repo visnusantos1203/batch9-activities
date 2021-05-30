@@ -4,65 +4,94 @@ const modal = document.querySelector(".modal-container");
 const resultMsg = document.getElementById("result-message");
 const playerOneScore = document.getElementById("p1-score");
 const playerTwoScore = document.getElementById("p2-score")
-let xInitialScore = 0;
-let oInitialScore = 0;
+const turnContainer = document.getElementById("turn-container");
+const btnContainer =document.querySelector(".btn-container");
+const gameContainer = document.getElementById("game-container");
+const gameCell = gameContainer.querySelectorAll("div") //array of cells
+
+// buttons
 const xBtn = document.getElementById("X");
 const oBtn = document.getElementById("O");
-const turnContainer = document.getElementById("turn-container");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+const restartBtn = document.getElementById("restartBtn");
+const historyBtn = document.getElementById("history-btn");
 
-let gameActive = false;
+let gameActive= false;
 let gameState = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer;
-let gameHistory = ["", "", "", "", "", "", "", "", ""];
+let gameHistory = [];
+let prevHistory= []
+let xInitialScore = 0;
+let oInitialScore = 0;
 
 const winningMessage = () => `${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+
 statusDisplay.innerHTML = currentPlayerTurn();
 
-//decides who takes the first move
-
-xBtn.addEventListener("click", xTurn);
+//Decides who takes the first move
 function xTurn(){
     currentPlayer = "X";
     gameActive = true;
-    handlePlayerChange();
-
-    console.log(currentPlayer);
-
     turnContainer.style.display = "none";
     statusDisplay.style.display = "block";
+    handlePlayerChange();
 } 
+xBtn.addEventListener("click", xTurn);
 
-oBtn.addEventListener("click", oTurn);
 function oTurn(){
     currentPlayer = "O";
     gameActive = true;
     handlePlayerChange();
     turnContainer.style.display = "none";
     statusDisplay.style.display = "block"
-} console.log(currentPlayer);
+}
+oBtn.addEventListener("click", oTurn);
+
+function displayHistory(){
+    modal.style.display = "none";
+    prevBtn.style.visibility = "visible";
+    btnContainer.style.display = "flex";
+}
+historyBtn.addEventListener("click", displayHistory)
+
+
+function prevMove(){
+    nextBtn.style.visibility = "visible";
+}
+prevBtn.addEventListener("click", prevMove);
+
+function restartGame(){
+    gameActive = false;
+    btnContainer.style.display = "none";
+    handleRestartGame();
+}
+restartBtn.addEventListener("click", restartGame);
 
 function handleCellClick(clickedCellEvent) {
     const clickedCell = clickedCellEvent.target;
     const clickedCellIndex = parseInt(
         clickedCell.getAttribute('data-cell-index')
     );
-    //ipupush sa index ng gameHistory gamit yung clickedCellIndex yung current player
-    /*for(let i = 0; i < gameHistory.length; i++){
-        if(i === clickedCellIndex){
-        gameHistory[i] = currentPlayer;
-        console.log(clickedCellIndex);
-        }
-        console.log(gameHistory);
-    };*/
-
+    
     if (gameState[clickedCellIndex] !== "" || !gameActive) {
-         return;
-    }
+        return;
+   }
+    let moveLogs = {}
+
+    moveLogs.index = clickedCell;
+    moveLogs.turn = currentPlayer;
+    gameHistory.push(moveLogs);
+ 
     handleCellPlayed(clickedCell, clickedCellIndex);
     handleResultValidation();
 }
+
+gameCell.forEach(cell => {
+    cell.addEventListener('click', handleCellClick)
+});
 
 //dito ma didisplay sa clicked cell kung anong letter mag lalaro
 function handleCellPlayed(clickedCell, clickedCellIndex) {
@@ -88,7 +117,6 @@ function handleResultValidation() {
         let a = gameState[winCondition[0]];
         let b = gameState[winCondition[1]];
         let c = gameState[winCondition[2]];
-        //console.log(winCondition);
 
         if (a === '' || b === '' || c === '') {
             continue;
@@ -98,6 +126,7 @@ function handleResultValidation() {
             break
         }
     }
+
     if (roundWon) {
         winner.innerHTML = winningMessage();
         resultMsg.innerHTML = "Congratulations!"
@@ -109,12 +138,12 @@ function handleResultValidation() {
             oInitialScore++
             playerTwoScore.innerHTML = oInitialScore;
         }
-
         statusDisplay.innerHTML = `Game Over!`;
         gameActive = false;
         modal.style.display = "flex"
         return;
     }
+    
     let roundDraw = !gameState.includes("");
     if (roundDraw) {
         winner.innerHTML = drawMessage();
@@ -138,15 +167,45 @@ function handleRestartGame() {
     gameActive = false;
     //currentPlayer = "X";
     gameState = ["", "", "", "", "", "", "", "", ""];
+    gameCell.forEach(cell => cell.innerHTML = "");
     statusDisplay.innerHTML = currentPlayerTurn();
     turnContainer.style.display = "flex";
     statusDisplay.style.display = "none"
     modal.style.display = "none"
+    gameHistory.length = 0;
+    prevHistory.length = 0;
+};
 
+prevBtn.addEventListener('click', () => {
+    nextBtn.style.visibility = 'visible';
+    
+    if (gameHistory.length != 0) {
+    let lastMove = gameHistory[gameHistory.length - 1];
+    let lastCell = lastMove.index;
+        lastCell.innerHTML = "";
+        prevHistory.push(lastMove);
+        gameHistory.pop();
+        console.log(prevHistory);
+        console.log(gameHistory);
+    } if (gameHistory.length === 0) {
+        prevBtn.style.visibility = 'hidden';
+    }
+});
 
-    document.querySelectorAll('.cell')
-        .forEach(cell => cell.innerHTML = "");
-}
+nextBtn.addEventListener('click', () => {
+    prevBtn.style.visibility = 'visible';
+    if (prevHistory.length != 0) {
+    let nextMove = prevHistory[prevHistory.length - 1];
+    let nextCell = nextMove.index;
+    let nextTurn = nextMove.turn;
+        nextCell.innerHTML = nextTurn;
+        gameHistory.push(nextMove);
+        prevHistory.pop();
+    } if (prevHistory.length === 0) {
+        nextBtn.style.visibility = 'hidden';
+    }
+})
+
 
 /*function onHover(e){
     if(gameActive === true){
@@ -155,9 +214,7 @@ function handleRestartGame() {
         e.target.textContent = "O";
     }
 }*/
-// try lang to
 
-//try lang to
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
 //document.querySelector('#restartBtn').addEventListener('click', handleRestartGame);

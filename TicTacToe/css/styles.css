@@ -76,21 +76,25 @@
 }
 
 .btn-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -ms-flex-line-pack: center;
       align-content: center;
-  width: 50vmin;
+  width: 55vmin;
   height: 50px;
   border: 1px solid red;
+}
+
+.btn-container #prev-btn,
+.btn-container #next-btn {
+  visibility: hidden;
 }
 
 .btn-container button {
   width: 25%;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 @font-face {
