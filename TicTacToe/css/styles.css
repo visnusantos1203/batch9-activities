@@ -31,13 +31,14 @@
   height: 55vmin;
   margin: auto;
   margin-top: 0;
-  -webkit-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3), -5px -10px 10px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3), -5px -10px 10px 5px rgba(0, 0, 0, 0.3);
+  border: 20px solid transparent;
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1), -5px -10px 10px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1), -5px -10px 10px 5px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
 }
 
 .game-container .cell {
-  border: 4px double rgba(0, 139, 139, 0.815);
+  border: 4px double #4CD7D0;
   width: calc(100 / 3);
   height: calc(100 / 3);
   cursor: pointer;
@@ -46,7 +47,7 @@
   text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  color: rgba(25, 148, 197, 0.4);
+  color: salmon;
   text-shadow: black;
 }
 
@@ -108,7 +109,7 @@
   left: 0;
   bottom: 0;
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.781);
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -126,9 +127,9 @@
 }
 
 .modal-container .modal {
-  width: 55vmin;
-  height: 60vmin;
-  border: 1px solid black;
+  width: 65vmin;
+  height: 70vmin;
+  border: 10px solid transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -144,10 +145,18 @@
           align-items: center;
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-image: url("https://media.tenor.com/images/568077a1c1fe4817450127a39d64ed50/tenor.gif");
+  background-color: #EFF1DB;
   border-radius: 30px;
   font-family: bubble;
   color: #bd1a86;
+  /*.tenor-gif-embed{
+            position: relative;
+            top: 0;
+            left: 0;
+            height: inherit;
+            width: inherit;
+        }*/
 }
 
 .modal-container .modal #result-message-container {
@@ -275,7 +284,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../assets/1926.jpg");
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#eff1db), color-stop(#f4ebd5), color-stop(#f9e6d1), color-stop(#fde0d1), color-stop(#ffdad3), color-stop(#ffd4d4), color-stop(#fdcfd7), color-stop(#f9cbdb), color-stop(#f3c4dc), color-stop(#ebbedf), color-stop(#e0b9e2), to(#d3b5e5));
+  background-image: linear-gradient(to right bottom, #eff1db, #f4ebd5, #f9e6d1, #fde0d1, #ffdad3, #ffd4d4, #fdcfd7, #f9cbdb, #f3c4dc, #ebbedf, #e0b9e2, #d3b5e5);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position-x: center;
@@ -284,8 +294,59 @@ body {
   width: 100vw;
 }
 
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  25% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  50% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  75% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  25% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  50% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+  75% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+  }
+}
+
 header {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 10%;
   width: auto;
   font-family: bubble;
@@ -293,83 +354,92 @@ header {
   font-size: 13vmin;
   padding: 20px;
   position: absolute;
+  left: 0;
+  right: 0;
+  top: 3vh;
+}
+
+header div {
+  margin: auto;
+  -webkit-animation: wiggle 3s infinite;
+          animation: wiggle 3s infinite;
 }
 
 header #tic {
-  color: lightblue;
+  color: #4CD7D0;
 }
 
 header #tac {
-  color: lightyellow;
+  color: #E1C340;
 }
 
 header #toe {
-  color: lightseagreen;
+  color: salmon;
 }
 
 @-webkit-keyframes startGame {
   0% {
-    color: #e49eb0;
+    color: #FD49A0;
   }
   15% {
-    color: #c58c4b;
+    color: #A16AE8;
   }
   25% {
-    color: #91b865;
+    color: #B4FEE7;
   }
   35% {
-    color: #5e5847;
+    color: #603F8B;
   }
   45% {
-    color: #4ac569;
+    color: #887BB0;
   }
   55% {
-    color: #52b1c9;
+    color: #85D2D0;
   }
   65% {
-    color: #3276cf;
+    color: #F4B9B8;
   }
   75% {
-    color: #b01ddd;
+    color: #2F5061;
   }
   85% {
-    color: #ce5f93;
+    color: #F37970;
   }
   100% {
-    color: #c11beb;
+    color: #F85C70;
   }
 }
 
 @keyframes startGame {
   0% {
-    color: #e49eb0;
+    color: #FD49A0;
   }
   15% {
-    color: #c58c4b;
+    color: #A16AE8;
   }
   25% {
-    color: #91b865;
+    color: #B4FEE7;
   }
   35% {
-    color: #5e5847;
+    color: #603F8B;
   }
   45% {
-    color: #4ac569;
+    color: #887BB0;
   }
   55% {
-    color: #52b1c9;
+    color: #85D2D0;
   }
   65% {
-    color: #3276cf;
+    color: #F4B9B8;
   }
   75% {
-    color: #b01ddd;
+    color: #2F5061;
   }
   85% {
-    color: #ce5f93;
+    color: #F37970;
   }
   100% {
-    color: #c11beb;
+    color: #F85C70;
   }
 }
 
@@ -393,19 +463,25 @@ header #toe {
   left: 0;
   right: 0;
   margin: auto;
-  width: 60vw;
+  margin-top: 15vmax;
+  width: 80vw;
   height: 60vh;
 }
 
 .play-game #gif {
   width: 20vmax;
   height: 20vmax;
+  margin-bottom: 50px;
+  background-color: salmon;
+  border: 10px solid white;
+  border-radius: 50%;
 }
 
 .play-game #start {
   font-family: bubble;
   font-size: 9vmin;
   color: wheat;
+  width: inherit;
   -webkit-animation: startGame 4s infinite;
           animation: startGame 4s infinite;
   border-radius: 20px;
@@ -413,9 +489,22 @@ header #toe {
 }
 
 .play-game button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: auto;
   height: 25%;
-  width: 15%;
+  width: 75%;
   background-color: transparent;
   border-radius: 50%;
   border: transparent;
@@ -451,12 +540,42 @@ header #toe {
   font-weight: lighter;
 }
 
+.main-container #palaman {
+  display: none;
+  position: absolute;
+  top: 15vmin;
+  left: 8vmax;
+  width: 15vmax;
+  height: 12vmax;
+}
+
+.main-container #palaman2 {
+  display: none;
+  width: 20vmax;
+  height: 20vmax;
+  position: absolute;
+  top: 42vmin;
+  right: 8vmax;
+}
+
+.main-container #palaman3 {
+  display: none;
+  width: 20vmax;
+  height: 20vmax;
+  position: absolute;
+  top: 40vmin;
+  left: 5vmax;
+}
+
 .game-status {
   display: none;
-  font-size: 9vmin;
+  font-size: 7vmin;
   font-weight: lighter;
-  color: #ec5688;
-  margin: 50px 50px 50px 50px;
+  color: #E1C340;
+  background-color: #f4f5e9a6;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 20vmin 5vmax 3vmax 5vmax;
 }
 
 #turn-container {
@@ -465,29 +584,34 @@ header #toe {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
-  background-color: rgba(43, 235, 209, 0.932);
+  background-color: rgba(255, 244, 185, 0.918);
   border-radius: 50px;
   padding: 20px;
-  border: 10px dotted white;
+  border: 6px dashed transparent;
+  width: 80vmin;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 5px 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 #turn-container span {
-  font-size: 6vmin;
+  font-size: 4vmin;
   font-weight: lighter;
-  color: #c55d80;
+  color: salmon;
+  width: inherit;
   text-shadow: 1px 10px 15px rgba 0, 0, 0, 0.4;
+  text-align: center;
 }
 
 #turn-container div {
   padding: 20px;
-  width: 55%;
+  width: 75%;
   height: 45%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -502,15 +626,16 @@ header #toe {
 
 #turn-container div button {
   margin-top: 20px;
-  border-radius: 35%;
-  width: 12vmin;
-  height: 12vmin;
-  background-color: rgba(255, 244, 185, 0.918);
-  border: 3px dotted orange;
+  border-radius: 50%;
+  width: 13vmin;
+  height: 13vmin;
+  background-color: salmon;
+  border: 3px dotted transparent;
   font-family: bubble;
   font-weight: lighter;
-  font-size: 9vmin;
-  color: salmon;
+  font-size: 11vmin;
+  padding: 0;
+  color: rgba(255, 244, 185, 0.918);
 }
 
 #turn-container div button:hover {
@@ -519,16 +644,18 @@ header #toe {
           transform: scale(1.1);
 }
 
-/*
-@media (max-height: 700px){
-    .game-container .cell{
-        font-size: 5rem;
-    }
+@media (max-width: 900px) {
+  header {
+    margin: auto;
+  }
+  .game-status {
+    margin-top: 20vmin;
+  }
 }
 
-@media (max-height: 600px){
-    .game-container .cell{
-        font-size: 4rem;
-    }
-}*/
+@media (max-height: 600px) {
+  .game-container .cell {
+    font-size: 4rem;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

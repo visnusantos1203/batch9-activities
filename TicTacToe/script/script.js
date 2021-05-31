@@ -9,6 +9,10 @@ const btnContainer =document.querySelector(".btn-container");
 const gameContainer = document.getElementById("game-container");
 const playGameContainer = document.querySelector(".play-game");
 const gameCell = gameContainer.querySelectorAll("div") //array of cells
+const header = document.getElementById("tictactoe");
+//const palaman1 = document.getElementById("palaman");
+const palaman2 = document.getElementById("palaman2");
+const palaman3 = document.getElementById("palaman3");
 
 // buttons
 const xBtn = document.getElementById("X");
@@ -99,6 +103,9 @@ function handleResultValidation() {
         statusDisplay.innerHTML = `Game Over!`;
         gameActive = false;
         modal.style.display = "flex"
+        palaman2.style.display = "none";
+        palaman3.style.display = "none";
+    
         return;
     }
     
@@ -109,6 +116,9 @@ function handleResultValidation() {
         statusDisplay.innerHTML = drawMessage();
         gameActive = false;
         modal.style.display = "flex"
+        palaman2.style.display = "none";
+        palaman3.style.display = "none";
+
 
         return;
     }
@@ -148,6 +158,12 @@ function xTurn(){
     gameActive = true;
     turnContainer.style.display = "none";
     statusDisplay.style.display = "block";
+    header.style.fontSize = "10vmin";
+    header.style.margin = "0";
+    //palaman1.style.display = "block";
+    palaman2.style.display = "block";
+    palaman3.style.display = "block";
+
     handlePlayerChange();
 } 
 xBtn.addEventListener("click", xTurn);
@@ -159,6 +175,12 @@ function oTurn(){
     handlePlayerChange();
     turnContainer.style.display = "none";
     statusDisplay.style.display = "block"
+    header.style.fontSize = "10vmin";
+    header.style.margin = "0";
+    //palaman1.style.display = "block";
+    palaman2.style.display = "block";
+    palaman3.style.display = "block";
+
 }
 oBtn.addEventListener("click", oTurn);
 
@@ -222,5 +244,22 @@ nextBtn.addEventListener('click', () => {
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
 document.querySelector('#new-game').addEventListener("click", handleRestartGame);
 
+let firstName = "John";
+let lastName = "Smith"
+let sum = 1*52;
+console.log(firstName.startsWith("J"));
+console.log(lastName.endsWith("th"));
+console.log(firstName.includes("Joh"));
+console.log(lastName.includes("th"));
+console.log(`${sum}`.repeat(5));
 
+let years = [1, 2, 3, 4, 5];
+var ages5 = years.map(function(el){
+	return 2016 - el;
+});
+console.log(ages5);
+
+// ES6
+let ages6 = years.map(el => 2016 - el);
+console.log(ages6);
 

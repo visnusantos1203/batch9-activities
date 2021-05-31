@@ -9,7 +9,7 @@
     left: 0;
     bottom: 0;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.781);
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -18,19 +18,27 @@
     height: 100vh;
     border: 1px solid red;
     .modal{
-        width: 55vmin;
-        height: 60vmin;
-        border: 1px solid black;
+        width: 65vmin;
+        height: 70vmin;
+        border: 10px solid transparent;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 0;
         padding: 0;
-        background-color: white;
+        background-image: url("https://media.tenor.com/images/568077a1c1fe4817450127a39d64ed50/tenor.gif");
+        background-color: #EFF1DB;
         border-radius: 30px;
         font-family: bubble;
         color: rgb(189, 26, 134);
+        /*.tenor-gif-embed{
+            position: relative;
+            top: 0;
+            left: 0;
+            height: inherit;
+            width: inherit;
+        }*/
         #result-message-container{
             padding-top: 10px;
             width: 90%;
