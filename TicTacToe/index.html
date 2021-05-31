@@ -9,16 +9,18 @@
     <title>TicTacToe</title>
 </head>
 <body onload="setHalfVolume()">
-    <header>
-        <span id="tic">Tic</span><span id="tac">Tac</span><span id="toe">Toe</span> 
+    <header id="tictactoe">
+        <div>
+            <span id="tic">Tic</span><span id="tac">Tac</span><span id="toe">Toe</span> 
+        </div>
     </header>
 
     <div class="play-game">
-        <img id="gif" src="https://media.giphy.com/media/LtGpcWj3donEg3Doj2/giphy.gif" alt="gif">
+        <img id="gif" src="https://media.tenor.com/images/d01618df7b1437386c93a9a4234ebaa2/tenor.gif" alt="gif">
         <button id="playBtn">
-            <img src="https://www.transparentpng.com/thumb/play/zh3yXb-play-button-png-image-free-download-searchpng.png" alt="Play Game">
+            <!--<img src="https://www.transparentpng.com/thumb/play/zh3yXb-play-button-png-image-free-download-searchpng.png" alt="Play Game">-->
+            <span id="start">Start Game</span>
         </button>
-        <span id="start">Start Game</span>
 
     </div>
 
@@ -31,6 +33,9 @@
             </div>    
         </div>
         <span class="game-status"></span>
+        <!--<img class="palamans" id="palaman" src="https://media.tenor.com/images/f2e2bb4a93d50a141e9c5b0ead4c4c35/tenor.gif" alt="">-->
+        <img class="palamans" id="palaman2" src="https://c.tenor.com/N3sRm4VNHQ0AAAAi/support-hands.gif" alt="">
+        <img class="palamans" id="palaman3" src="https://media.tenor.com/images/9492cf504264eceeedacc9df52cb9f23/tenor.gif" alt="">
         <div class="game-container" id="game-container" >
             <div class="cell" data-cell-index="0"></div>
             <div class="cell" data-cell-index="1"></div>
@@ -50,10 +55,11 @@
 
         <div class="modal-container" id="winning-message">
             <div class="modal">
+
                 <div id="result-message-container">
                     <h1 id="result-message"></h1>
                 </div>
-                🎉
+                
                 <div id="winner-container">
                     <h2 id="winner"></h2>
                 </div>
@@ -78,11 +84,5 @@
         </div>
     </div>
     
-    <script>
-        function setHalfVolume() {
-            var myAudio = document.getElementById("audio");
-            myAudio.volume = 0.1;
-        }
-    </script>
 </body>
 </html>
