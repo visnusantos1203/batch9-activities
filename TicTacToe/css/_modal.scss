@@ -1,0 +1,119 @@
+@font-face {
+    font-family: bubble;
+    src: url("../Bubble3d-R80o.ttf");
+}
+.modal-container{
+    margin: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid red;
+    .modal{
+        width: 55vmin;
+        height: 60vmin;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        border-radius: 30px;
+        font-family: bubble;
+        color: rgb(189, 26, 134);
+        #result-message-container{
+            padding-top: 10px;
+            width: 90%;
+            text-align: center;
+            //border-top: 5px double white;
+            //border-bottom: 5px double white;
+            h1{
+                font-size: 4.5vmin;
+                font-weight: lighter;
+                color: rgb(189, 26, 134);
+            }
+        }
+        #winner-container{
+            width: 100%;
+            text-align: center;
+            h2{
+                font-size: 6vmin;
+                font-weight: lighter;
+                color: #FF9AA2;
+            }
+        }
+        #button-container{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 20px;
+            font-size: 3vmin;
+            button{
+                border-radius: 20px;
+                font-family: bubble;
+                height: 100%;
+                border: transparent;
+                background-color: transparent;
+                font-size: 3vmin;
+                color: rgb(189, 26, 134);
+                &:hover{
+                    cursor: pointer;
+                }    
+            }
+        }
+        #score-board{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            //margin-top: 30px;
+            width: 100%;
+            text-align: center;
+            font-size: 5vmin;
+            color: #FF9AA2;
+        }
+        .score{
+            width: 80%;
+            //border: 1px solid black;
+            display: flex;
+            justify-content: space-around;
+            margin:10px;
+            #player1,
+            #player2{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+                //border: 1px solid black;
+                h1{
+                    padding: 0;
+                }
+                span{
+                    //border: 1px solid black;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    text-align: center;
+                    font-size: 3vmin;
+                }
+                #p1-score,
+                #p2-score{
+                    font-size: 7vmin;
+                    color: #FF9AA2;
+                }
+            }
+        }
+    }
+}
