@@ -243,23 +243,3 @@ nextBtn.addEventListener('click', () => {
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
 document.querySelector('#new-game').addEventListener("click", handleRestartGame);
-
-let firstName = "John";
-let lastName = "Smith"
-let sum = 1*52;
-console.log(firstName.startsWith("J"));
-console.log(lastName.endsWith("th"));
-console.log(firstName.includes("Joh"));
-console.log(lastName.includes("th"));
-console.log(`${sum}`.repeat(5));
-
-let years = [1, 2, 3, 4, 5];
-var ages5 = years.map(function(el){
-	return 2016 - el;
-});
-console.log(ages5);
-
-// ES6
-let ages6 = years.map(el => 2016 - el);
-console.log(ages6);
-

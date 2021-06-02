@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <title>TicTacToe</title>
 </head>
-<body onload="setHalfVolume()">
+<body>
     <header id="tictactoe">
         <div>
             <span id="tic">Tic</span><span id="tac">Tac</span><span id="toe">Toe</span> 
@@ -21,7 +21,6 @@
             <!--<img src="https://www.transparentpng.com/thumb/play/zh3yXb-play-button-png-image-free-download-searchpng.png" alt="Play Game">-->
             <span id="start">Start Game</span>
         </button>
-
     </div>
 
     <div class="main-container">
@@ -48,9 +47,13 @@
             <div class="cell" data-cell-index="8"></div>
         </div>
         <div class="btn-container">
-            <button id="prev-btn">Previous</button>
-            <button id="next-btn">Next</button>
+            <button id="prev-btn">
+                <img src="./assets/left-arrow.svg" alt="">
+            </button>
             <button id="restartBtn">Restart</button>
+            <button id="next-btn">
+                <img src="./assets/right-arrow.svg" alt="">
+            </button>
         </div> 
 
         <div class="modal-container" id="winning-message">

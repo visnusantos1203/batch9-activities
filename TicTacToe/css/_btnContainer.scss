@@ -4,14 +4,28 @@
     align-content: center;
     width: 55vmin;
     height: 50px;
-    border: 1px solid red;
+    margin-top: 30px;
+    //border: 1px solid red;
     #prev-btn,
     #next-btn{
         visibility:hidden;
     }
+    #restartBtn{
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 15px;
+        border: transparent;
+        color: salmon;
+        font-weight: bolder;
+        font-size: 1rem;
+    }
     button{
-        width: 25%;
+        width: 80%;
         cursor: pointer;
-        border-radius: 20px;
+        background-color: transparent;
+        border: transparent;
+        img{
+            width: 90%;
+            height: 90%;
+        }
     }
 }
