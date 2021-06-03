@@ -10,11 +10,10 @@ const gameContainer = document.getElementById("game-container");
 const playGameContainer = document.querySelector(".play-game");
 const gameCell = gameContainer.querySelectorAll("div") //array of cells
 const header = document.getElementById("tictactoe");
-//const palaman1 = document.getElementById("palaman");
 const palaman2 = document.getElementById("palaman2");
 const palaman3 = document.getElementById("palaman3");
 
-// buttons
+// Buttons
 const xBtn = document.getElementById("X");
 const oBtn = document.getElementById("O");
 const prevBtn = document.getElementById("prev-btn");
@@ -48,6 +47,8 @@ const winningConditions = [
 
 statusDisplay.innerHTML = currentPlayerTurn();
 
+document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
+
 function handleCellClick(clickedCellEvent) {
     const clickedCell = clickedCellEvent.target;
     const clickedCellIndex = parseInt(
@@ -57,12 +58,16 @@ function handleCellClick(clickedCellEvent) {
     if (gameState[clickedCellIndex] !== "" || !gameActive) {
         return;
    }
+
+   console.log(clickedCell);
+   //Logs every move into an object and pushes into gameHistory array
     let moveLogs = {}
 
     moveLogs.index = clickedCell;
     moveLogs.turn = currentPlayer;
     gameHistory.push(moveLogs);
- 
+    console.log(moveLogs);
+    console.log(gameHistory);
     handleCellPlayed(clickedCell, clickedCellIndex);
     handleResultValidation();
 }
@@ -73,13 +78,16 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
 }
 
 function handleResultValidation() {
+
     let roundWon = false;
+
     for (let i = 0; i <= 7; i++) {
         const winCondition = winningConditions[i];
         let a = gameState[winCondition[0]];
         let b = gameState[winCondition[1]];
         let c = gameState[winCondition[2]];
 
+        console.log(a);
         if (a === '' || b === '' || c === '') {
             continue;
         }
@@ -87,12 +95,12 @@ function handleResultValidation() {
             roundWon = true;
             break
         }
-    }
+    };
 
     if (roundWon) {
         winner.innerHTML = winningMessage();
         resultMsg.innerHTML = "Congratulations!"
-
+        // Increments the score of whoever the winner is in the match
         if(currentPlayer === "X"){
             xInitialScore++
             playerOneScore.innerHTML = xInitialScore;
@@ -100,6 +108,7 @@ function handleResultValidation() {
             oInitialScore++
             playerTwoScore.innerHTML = oInitialScore;
         }
+
         statusDisplay.innerHTML = `Game Over!`;
         gameActive = false;
         modal.style.display = "flex"
@@ -119,7 +128,6 @@ function handleResultValidation() {
         palaman2.style.display = "none";
         palaman3.style.display = "none";
 
-
         return;
     }
     handlePlayerChange();
@@ -129,6 +137,8 @@ function handlePlayerChange() {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     statusDisplay.innerHTML = currentPlayerTurn();
 }
+
+document.querySelector('#new-game').addEventListener("click", handleRestartGame);
 
 function handleRestartGame() {
     gameActive = false;
@@ -144,14 +154,14 @@ function handleRestartGame() {
     prevHistory.length = 0;
 };
 
-//Play button 
+    //Play button 
 function playGame(){
     turnContainer.style.display = "flex";
     playGameContainer.style.display ="none";
 }
 playBtn.addEventListener("click", playGame);
 
-//Decides who takes the first move
+    //Decides who will take the first move
 function xTurn(){
     gameContainer.style.display = "grid";
     currentPlayer = "X";
@@ -160,7 +170,6 @@ function xTurn(){
     statusDisplay.style.display = "block";
     header.style.fontSize = "10vmin";
     header.style.margin = "0";
-    //palaman1.style.display = "block";
     palaman2.style.display = "block";
     palaman3.style.display = "block";
 
@@ -177,7 +186,6 @@ function oTurn(){
     statusDisplay.style.display = "block"
     header.style.fontSize = "10vmin";
     header.style.margin = "0";
-    //palaman1.style.display = "block";
     palaman2.style.display = "block";
     palaman3.style.display = "block";
 
@@ -191,12 +199,6 @@ function displayHistory(){
 }
 historyBtn.addEventListener("click", displayHistory)
 
-
-function prevMove(){
-    nextBtn.style.visibility = "visible";
-}
-prevBtn.addEventListener("click", prevMove);
-
 function restartGame(){
     gameActive = false;
     gameContainer.style.display = "none";
@@ -209,7 +211,6 @@ restartBtn.addEventListener("click", restartGame);
 gameCell.forEach(cell => {
     cell.addEventListener('click', handleCellClick)
 });
-
 
 prevBtn.addEventListener('click', () => {
     nextBtn.style.visibility = 'visible';
@@ -236,10 +237,8 @@ nextBtn.addEventListener('click', () => {
         nextCell.innerHTML = nextTurn;
         gameHistory.push(nextMove);
         prevHistory.pop();
-    } if (prevHistory.length === 0) {
+    } else {
         nextBtn.style.visibility = 'hidden';
     }
 })
 
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
-document.querySelector('#new-game').addEventListener("click", handleRestartGame);
