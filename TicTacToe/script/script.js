@@ -1,3 +1,4 @@
+
 const statusDisplay = document.querySelector(".game-status")
 const winner = document.getElementById("winner");
 const modal = document.querySelector(".modal-container");
@@ -22,11 +23,11 @@ const restartBtn = document.getElementById("restartBtn");
 const historyBtn = document.getElementById("history-btn");
 const playBtn = document.getElementById("playBtn");
 
-let gameActive= false;
+let gameActive = false;
 let gameState = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer;
 let gameHistory = [];
-let prevHistory= []
+let prevHistory= [];
 let xInitialScore = 0;
 let oInitialScore = 0;
 
@@ -55,19 +56,14 @@ function handleCellClick(clickedCellEvent) {
         clickedCell.getAttribute('data-cell-index')
     );
     
-    if (gameState[clickedCellIndex] !== "" || !gameActive) {
-        return;
-   }
-
-   console.log(clickedCell);
+    if (gameState[clickedCellIndex] !== "" || !gameActive) return;
+       
    //Logs every move into an object and pushes into gameHistory array
     let moveLogs = {}
 
     moveLogs.index = clickedCell;
     moveLogs.turn = currentPlayer;
     gameHistory.push(moveLogs);
-    console.log(moveLogs);
-    console.log(gameHistory);
     handleCellPlayed(clickedCell, clickedCellIndex);
     handleResultValidation();
 }
@@ -80,14 +76,12 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
 function handleResultValidation() {
 
     let roundWon = false;
-
     for (let i = 0; i <= 7; i++) {
         const winCondition = winningConditions[i];
         let a = gameState[winCondition[0]];
         let b = gameState[winCondition[1]];
         let c = gameState[winCondition[2]];
 
-        console.log(a);
         if (a === '' || b === '' || c === '') {
             continue;
         }
@@ -206,11 +200,7 @@ function restartGame(){
     handleRestartGame();
 }
 restartBtn.addEventListener("click", restartGame);
-
-
-gameCell.forEach(cell => {
-    cell.addEventListener('click', handleCellClick)
-});
+gameCell.forEach(cell => cell.addEventListener('click', handleCellClick));
 
 prevBtn.addEventListener('click', () => {
     nextBtn.style.visibility = 'visible';
@@ -221,9 +211,7 @@ prevBtn.addEventListener('click', () => {
         lastCell.innerHTML = "";
         prevHistory.push(lastMove);
         gameHistory.pop();
-        console.log(prevHistory);
-        console.log(gameHistory);
-    } if (gameHistory.length === 0) {
+    } if (gameHistory.length === 1) {
         prevBtn.style.visibility = 'hidden';
     }
 });
@@ -242,3 +230,72 @@ nextBtn.addEventListener('click', () => {
     }
 })
 
+
+
+var store = {
+    storeName: "Mejo Booked",
+    inventoryList: [],
+    earnings: 0
+    }
+
+var Book = function(title, quantity, value) {
+    this.title = title;
+    this.quantity = quantity;
+    this.value = value;
+}
+
+function addBook(title, quantity, value){
+    let newBook = new Book(title, quantity, value)
+    store.inventoryList.push(newBook);
+    return newBook;
+}
+addBook("Hairy Potter", 0, 999);
+addBook("Hairy Potterr", 0, 99);
+
+//console.log(store.inventoryList);
+
+function restockBook(title, quantity){
+    for(let i = 0; i < store.inventoryList.length; i++){
+        if(store.inventoryList[i].title === title){
+            store.inventoryList[i].quantity += quantity;
+         }     
+    }
+}
+restockBook("Hairy Potter", 10);
+restockBook("Hairy Potterr", 50);
+
+function sellBook(title, quantity){
+
+    let inventory = store.inventoryList;
+    let bookToBeSold = inventory.find(val => val.title === title);
+
+    console.log(bookToBeSold);
+
+    if(bookToBeSold.title === title){
+        bookToBeSold.quantity = bookToBeSold.quantity - quantity;
+        store.earnings = bookToBeSold.value * quantity;
+        console.log(`Transaction Successful!`)
+    } else{
+        console.log(`${title} is not existing in our inventory`)
+
+    }
+    if(bookToBeSold.quantity < quantity){
+        console.log(`Sorry! Only ${bookToBeSold.quantity} left`)
+    }
+} 
+sellBook("Hairy Potter", 30);
+sellBook("Hairy Potterr", 5);
+
+function totalEarnings(){
+    console.log(`Store: ${store.storeName} Total Earnings: ${store.earnings}`);
+}
+totalEarnings();
+
+function listInventory(){
+    let inventory = store.inventoryList;
+    for(let i = 0; i < inventory.length; i++){
+        console.log(
+        `Book Title: ${inventory[i].title} Quantity: ${inventory[i].quantity} Value: ${inventory[i].value}`)    
+    }
+}
+listInventory();
