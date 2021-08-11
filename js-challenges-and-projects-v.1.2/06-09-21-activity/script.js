@@ -30,7 +30,6 @@ class SubStore extends Store {
     constructor(storeName, inventory, earnings, parentStore){
         super(storeName, inventory, earnings)
         this.parentStore = parentStore
-      
     }
     newStore(){
         mixins.newStoreMessage(this.storeName)
@@ -41,11 +40,12 @@ class SubStore extends Store {
         let newItem1 = new NewItem(productName, quantity, value)
         this.inventory.push(newItem1)
         this.parentStore.inventory.push(newItem1)
-        mixins.addProductMessage(productName)
+        mixins.addProductMessage(productName, this.storeName)
+        console.log(this.storeName)
     }
     // sells a product if it's existing in the list and the quantity in the list is > the quantity to be sold
     sellProduct(productName, quantity) {
-        // checks if the product is existing in the list
+    // checks if the product is existing in the list
         let result = mixins.finder(productName, this.inventory)//this.inventory.find(product => product.productName === productName); //mixins.finder(productName)
         mixins.sellProductMessage(productName, quantity, this.inventory)
         if(result !== undefined){
@@ -81,14 +81,14 @@ laptopStore.sellProduct("ASUS", 11)
 laptopStore.totalEarnings()
 laptopStore.displayList()
 
-/* bookStore.newStore()
+bookStore.newStore()
 bookStore.newProduct("Cinder", 10, 200)
 bookStore.newProduct("Harry Potter", 10, 200)
 bookStore.restockProduct("Cinder", 1)
 bookStore.sellProduct("Harry Potter", 2)
 bookStore.totalEarnings()
 bookStore.displayList()
- */
+
 /* fruitStore.newStore()
 fruitStore.newProduct("Apple", 10, 50)
 fruitStore.newProduct("Mango", 10, 30)

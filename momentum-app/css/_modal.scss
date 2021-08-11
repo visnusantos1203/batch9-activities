@@ -14,21 +14,21 @@
 }
 
 .modal-content{
-    grid-column: 6 / 8;
+    grid-column: 8 / 9;
     grid-row: 3 /7;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    width: 25vw;
+    width: 20vw;
     height: 280px;
-    border: 2px solid purple;
+    border: 2px solid rgb(233, 214, 233);
     border-radius: 20px;
 
     margin-left: auto;
     margin-right: auto;
-    padding: 20px;
-    background-color: rgba(10, 176, 218, 0.5);
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.959);
 
     z-index: 1;
     label{
@@ -44,4 +44,5 @@
 #quote-text,
 #quote-author{
     background-color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1em;
 }

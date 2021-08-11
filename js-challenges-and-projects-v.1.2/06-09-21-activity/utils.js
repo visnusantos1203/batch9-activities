@@ -1,12 +1,3 @@
-/* - create a mixin file that can be imported by other js files
-- this mixin file can show messages of
-  - add
-  - sell
-  - restock
-  - errors
-  - etc
-- this mixin file can find specific item of the store
- */
 
 export const mixins  = {
     // finds for a product inside inventory
@@ -19,13 +10,13 @@ export const mixins  = {
     restockMessage(productName, quantity){
         console.log(`Successfully added ${quantity} ${productName}`)
     },
-    addProductMessage(productName){
-        console.log(`New product "${productName}" is added to the inventory`)
+    addProductMessage(productName, storeName){
+        console.log(`${storeName}New product "${productName}" is added to the inventory`)
     },
     sellProductMessage(productName, quantity, inventory){
-        let result = this.finder(productName, inventory); //mixins.finder(productName)
+        let result = this.finder(productName, inventory);
 
-        if(result !==undefined){
+        if(result !== undefined){
             if(result.quantity >= quantity){
                 console.log(`Transaction Successful! ${quantity} ${productName} sold`)
             }else{

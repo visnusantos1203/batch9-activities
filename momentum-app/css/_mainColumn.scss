@@ -6,7 +6,9 @@
     z-index: 1;
     text-align: center;
     //border: 1px solid black;
-    color: white;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 2px 5px rgba(43, 46, 51, 0.781);
 }
 
 @font-face {
@@ -33,7 +35,7 @@
     align-content: center;
     //margin: auto;
     font-family: monospace;
-    font-size: 6em
+    font-size: 7em
     //background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -52,9 +54,11 @@
     font-family: monospace;    
     #greetings-text{
         font-size: 3em;
+        font-weight: bolder;
         font-family: monospace;
         text-align: center;
-        color: white;
+        color: rgb(255, 255, 255);
+        text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.781);
         margin: 0;
     }  
     input{
@@ -71,7 +75,8 @@
         font-size: 2em;
         font-family: monospace;
         background-color: transparent;
-        color: orangered;
+        color: rgb(37, 3, 3);
+        text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.781);
         &::placeholder{
             color: black;
             font-size: 1rem;
@@ -91,14 +96,16 @@
     font-size: 1.5em;
     margin: 0;
     padding: 0;
-    color: black;
+    color: rgb(117, 19, 19);
+    text-shadow: 3px 2px 5px rgba(255, 255, 255, 0.781);
     #main-focus{
         border: none;
         border-bottom: 3px solid white;
         background-color: transparent;
         font-family: monospace;
         text-align: center;
-        color: black;
+        color: rgb(255, 255, 255);
+        text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.781);
         margin-top: 0;
         margin-bottom: 0;
         //margin: 0;
@@ -120,13 +127,20 @@
     #add-toDo{
         background-color: transparent;
         padding: 0;
-        margin: 0;
+        margin: auto;
         border: none;
         font-family: monospace;
+        height: fit-content;
         //border-bottom: 3px solid red;
         padding-bottom: 5px;
+        align-content: center;
+        border: 1px solid pink;
         &:hover{
             cursor: pointer;
+        }
+        input{
+           color: white;
+           text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.781);
         }
     }
     ul{
@@ -134,7 +148,6 @@
         margin: 0;
     }
     
-
     .li{
         text-align: center;
         margin: auto;
@@ -155,6 +168,7 @@
         margin: 0;
         font-family: monospace;
         background-color: transparent;
+        align-content: center;
     }
 }
    
@@ -186,6 +200,9 @@
     padding: 0;
     margin: auto;
     font-size: 1em;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 2px 5px rgba(172, 158, 158, 0.781);
 }
 
 #add-quote{
@@ -194,7 +211,9 @@
     margin: auto;
     padding: 0;
     background-color: transparent;
-    color: white;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.781);
     border: none;
     &:hover{
         cursor: pointer;
@@ -213,7 +232,9 @@
     margin: auto;
     z-index: 1;
     padding: 0;
-    color: white;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.781);
     border: none;
     &:hover{
         cursor: pointer;
